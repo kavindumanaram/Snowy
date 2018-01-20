@@ -10,33 +10,33 @@
     <title>JobBoard - Bootstrap HTML5 Job Portal Template</title>    
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">    
-    <link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css" type="text/css">  
-    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">  
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" type="text/css">    
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jasny-bootstrap.min.css" type="text/css">  
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-select.min.css" type="text/css">  
     <!-- Material CSS -->
-    <link rel="stylesheet" href="assets/css/material-kit.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/material-kit.css" type="text/css">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" type="text/css"> 
-    <link rel="stylesheet" href="assets/fonts/themify-icons.css"> 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/font-awesome.min.css" type="text/css"> 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/themify-icons.css"> 
 
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="assets/extras/animate.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/extras/animate.css" type="text/css">
     <!-- Owl Carousel -->
-    <link rel="stylesheet" href="assets/extras/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="assets/extras/owl.theme.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/extras/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/extras/owl.theme.css" type="text/css">
     <!-- Rev Slider CSS -->
-    <link rel="stylesheet" href="assets/extras/settings.css" type="text/css"> 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/extras/settings.css" type="text/css"> 
     <!-- Slicknav js -->
-    <link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/slicknav.css" type="text/css">
     <!-- Main Styles -->
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css" type="text/css">
     <!-- Responsive CSS Styles -->
-    <link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css" type="text/css">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/colors/red.css" media="screen" />
 
 	<script type="text/javascript">
 //made by vipul mirajkar thevipulm.appspot.com
@@ -185,7 +185,7 @@ var TxtType = function(el, toRotate, period) {
           <div class="col-md-12">
             <div class="job-list">
               <div class="thumb">
-                <a href="job-details.html"><img src="assets/img/jobs/img-1.jpg" alt=""></a>
+                <a href="job-details.html"><img src="<?php echo base_url(); ?>assets/img/jobs/img-1.jpg" alt=""></a>
               </div>
               <div class="job-list-content">
                 <h4><a href="job-details.html">Need a web designer</a><span class="full-time">Full-Time</span></h4>
@@ -209,7 +209,7 @@ var TxtType = function(el, toRotate, period) {
             </div>
             <div class="job-list">
               <div class="thumb">
-                <a href="job-details.html"><img src="assets/img/jobs/img-2.jpg" alt=""></a>
+                <a href="job-details.html"><img src="<?php echo base_url(); ?>assets/img/jobs/img-2.jpg" alt=""></a>
               </div>
               <div class="job-list-content">
                 <h4><a href="job-details.html">Front-end developer needed</a><span class="full-time">Full-Time</span></h4>
@@ -233,7 +233,7 @@ var TxtType = function(el, toRotate, period) {
             </div>
             <div class="job-list">
               <div class="thumb">
-                <a href="job-details.html"><img src="assets/img/jobs/img-3.jpg" alt=""></a>
+                <a href="job-details.html"><img src="<?php echo base_url(); ?>assets/img/jobs/img-3.jpg" alt=""></a>
               </div>
               <div class="job-list-content">
                 <h4><a href="job-details.html">Senior Accountant</a><span class="part-time">Part-Time</span></h4>
@@ -257,7 +257,7 @@ var TxtType = function(el, toRotate, period) {
             </div>
             <div class="job-list">
               <div class="thumb">
-                <a href="job-details.html"><img src="assets/img/jobs/img-4.jpg" alt=""></a>
+                <a href="job-details.html"><img src="<?php echo base_url(); ?>assets/img/jobs/img-4.jpg" alt=""></a>
               </div>
               <div class="job-list-content">
                 <h4><a href="job-details.html">Fullstack web developer needed</a><span class="full-time">Full-Time</span></h4>
@@ -316,7 +316,7 @@ var TxtType = function(el, toRotate, period) {
                 <div class="featured-inner">
                   <figure class="item-thumb">
                     <a class="hover-effect" href="job-page.html">
-                      <img src="assets/img/features/img-1.jpg" alt="">
+                      <img src="<?php echo base_url(); ?>assets/img/features/img-1.jpg" alt="">
                     </a>
                   </figure>
                   <div class="item-body">
@@ -340,7 +340,7 @@ var TxtType = function(el, toRotate, period) {
                 <div class="featured-inner">
                   <figure class="item-thumb">
                     <a class="hover-effect" href="job-page.html">
-                      <img src="assets/img/features/img-2.jpg" alt="">
+                      <img src="<?php echo base_url(); ?>assets/img/features/img-2.jpg" alt="">
                     </a>
                   </figure>
                   <div class="item-body">
@@ -364,7 +364,7 @@ var TxtType = function(el, toRotate, period) {
                 <div class="featured-inner">
                   <figure class="item-thumb">
                     <a class="hover-effect" href="job-page.html">
-                      <img src="assets/img/features/img-3.jpg" alt="">
+                      <img src="<?php echo base_url(); ?>assets/img/features/img-3.jpg" alt="">
                     </a>
                   </figure>
                   <div class="item-body">
@@ -419,7 +419,7 @@ var TxtType = function(el, toRotate, period) {
             <div class="blog-item-wrapper">
               <div class="blog-item-img">
                 <a href="single-post.html">
-                  <img src="assets/img/blog/home-items/img1.jpg" alt="">
+                  <img src="<?php echo base_url(); ?>assets/img/blog/home-items/img1.jpg" alt="">
                 </a>                
               </div>
               <div class="blog-item-text">
@@ -446,7 +446,7 @@ var TxtType = function(el, toRotate, period) {
             <div class="blog-item-wrapper">
               <div class="blog-item-img">
                 <a href="single-post.html">
-                  <img src="assets/img/blog/home-items/img2.jpg" alt="">
+                  <img src="<?php echo base_url(); ?>assets/img/blog/home-items/img2.jpg" alt="">
                 </a>                
               </div>
               <div class="blog-item-text">
@@ -473,7 +473,7 @@ var TxtType = function(el, toRotate, period) {
             <div class="blog-item-wrapper">
               <div class="blog-item-img">
                 <a href="single-post.html">
-                  <img src="assets/img/blog/home-items/img3.jpg" alt="">
+                  <img src="<?php echo base_url(); ?>assets/img/blog/home-items/img3.jpg" alt="">
                 </a>                
               </div>
               <div class="blog-item-text">
@@ -505,21 +505,21 @@ var TxtType = function(el, toRotate, period) {
         <div class="row">
           <div class="touch-slider" class="owl-carousel owl-theme">
             <div class="item active text-center">  
-              <img class="img-member" src="assets/img/testimonial/img1.jpg" alt=""> 
+              <img class="img-member" src="<?php echo base_url(); ?>assets/img/testimonial/img1.jpg" alt=""> 
               <div class="client-info">
                <h2 class="client-name">Jessica <span>(Senior Accountant)</span></h2>
               </div>
               <p><i class="fa fa-quote-left quote-left"></i> The team that was assigned to our project... were extremely professional <i class="fa fa-quote-right quote-right"></i><br> throughout the project and assured that the owner expectations were met and <br> often exceeded. </p>
             </div>
             <div class="item text-center">
-              <img class="img-member" src="assets/img/testimonial/img2.jpg" alt=""> 
+              <img class="img-member" src="<?php echo base_url(); ?>assets/img/testimonial/img2.jpg" alt=""> 
               <div class="client-info">
                <h2 class="client-name">John Doe <span>(Project Menager)</span></h2>
               </div>
               <p><i class="fa fa-quote-left quote-left"></i> The team that was assigned to our project... were extremely professional <i class="fa fa-quote-right quote-right"></i><br> throughout the project and assured that the owner expectations were met and <br> often exceeded. </p>
             </div>
             <div class="item text-center">
-              <img class="img-member" src="assets/img/testimonial/img3.jpg" alt=""> 
+              <img class="img-member" src="<?php echo base_url(); ?>assets/img/testimonial/img3.jpg" alt=""> 
               <div class="client-info">
                 <h2 class="client-name">Helen <span>(Engineer)</span></h2>
               </div>
@@ -540,28 +540,28 @@ var TxtType = function(el, toRotate, period) {
         <div class="row"> 
           <div id="clients-scroller">
             <div class="items">
-              <img src="assets/img/clients/img1.png" alt="">
+              <img src="<?php echo base_url(); ?>assets/img/clients/img1.png" alt="">
             </div>
             <div class="items">
-              <img src="assets/img/clients/img2.png" alt="">
+              <img src="<?php echo base_url(); ?>assets/img/clients/img2.png" alt="">
             </div>
             <div class="items">
-              <img src="assets/img/clients/img3.png" alt="">
+              <img src="<?php echo base_url(); ?>assets/img/clients/img3.png" alt="">
             </div>
             <div class="items">
-              <img src="assets/img/clients/img4.png" alt="">
+              <img src="<?php echo base_url(); ?>assets/img/clients/img4.png" alt="">
             </div>
             <div class="items">
-              <img src="assets/img/clients/img5.png" alt="">
+              <img src="<?php echo base_url(); ?>assets/img/clients/img5.png" alt="">
             </div>
             <div class="items">
-              <img src="assets/img/clients/img6.png" alt="">
+              <img src="<?php echo base_url(); ?>assets/img/clients/img6.png" alt="">
             </div>
             <div class="items">
-              <img src="assets/img/clients/img6.png" alt="">
+              <img src="<?php echo base_url(); ?>assets/img/clients/img6.png" alt="">
             </div>
             <div class="items">
-              <img src="assets/img/clients/img6.png" alt="">
+              <img src="<?php echo base_url(); ?>assets/img/clients/img6.png" alt="">
             </div>
           </div>
         </div>
@@ -651,22 +651,22 @@ var TxtType = function(el, toRotate, period) {
     </div>
         
     <!-- Main JS  -->
-    <script type="text/javascript" src="assets/js/jquery-min.js"></script>      
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>    
-    <script type="text/javascript" src="assets/js/material.min.js"></script>
-    <script type="text/javascript" src="assets/js/material-kit.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.slicknav.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-    <script type="text/javascript" src="assets/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="assets/js/jasny-bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="assets/js/form-validator.min.js"></script>
-    <script type="text/javascript" src="assets/js/contact-form-script.js"></script>    
-    <script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-min.js"></script>      
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/material.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/material-kit.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.slicknav.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/main.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/form-validator.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/contact-form-script.js"></script>    
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.themepunch.tools.min.js"></script>
     
   </body>
 </html>
