@@ -65,74 +65,102 @@
                      <div class="post-header">
                         <p>Already have an account? <a href="login.php">Click here to login</a></p>
                      </div>
-                     <form class="form-ad">
+                     <form class="form-ad" method="post" action="<?php echo base_url();?>index.php/Resume/add">
                         <div class="divider">
                            <h3>Basic information</h3>
                         </div>
                         <div class="form-group is-empty">
                            <label class="control-label" for="textarea">Title</label>
-                           <select class="form-control" id="sel1">
+                           <select class="form-control" id="title" name="title">
                               <option>Mr</option>
                               <option>Mrs</option>
                               <option>Ms</option>
+                              <option>Miss</option>
                            </select>
                            <span class="material-input"></span>
                         </div>
                         <div class="form-group is-empty">
                            <label class="control-label" for="textarea">Name</label>
-                           <input type="text" class="form-control" placeholder="Name">
+                           <input type="text" class="form-control" placeholder="Enter Your Full Name" name="name" id="name">
                            <span class="material-input"></span>
                         </div>
                         <div class="form-group is-empty">
                            <label class="control-label" for="textarea">NIC</label>
-                           <input type="text" class="form-control" placeholder="Name">
+                           <input type="text" class="form-control" placeholder="Enter Your Natianal Identity Card Number" name="nic" id="nic">
                            <span class="material-input"></span>
                         </div>
                         <div class="form-group is-empty">
                            <label class="control-label" for="textarea">Gender</label><br/>
-                           <label class="radio-inline"><input type="radio" name="optradio">Option 1</label>
-                           <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
+                           <label class="radio-inline"><input type="radio" name="gender" value="1">Male</label>
+                           <label class="radio-inline"><input type="radio" name="gender" value="2">Female</label>
                            <span class="material-input"></span>
                         </div>
                         <div class="form-group is-empty">
                            <label class="control-label" for="textarea"></label>
                            <label class="control-label" for="textarea">Email</label>
-                           <input type="text" class="form-control" placeholder="Your@domain.com">
+                           <input type="text" class="form-control" placeholder="Enter Your Email Address (eg: Your@domain.com)" name="email" id="email">
                            <span class="material-input"></span>
                         </div>
                         <div class="form-group is-empty">
-                           <label class="control-label" for="textarea">Contact No</label>
-                           <input type="text" class="form-control" placeholder="Years old">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <label class="control-label" for="textarea">Mobile Number</label>
+                                 <input class="form-control" placeholder="Enter Your Mobile Phone Number" type="text" name="mobile" id="mobile">
+                              </div>
+                              <div class="col-md-6">
+                                 <label class="control-label" for="textarea">Home Phone</label>
+                                 <input class="form-control" placeholder="Enter Your Home Phone Number" type="text" name="home_phone" id="home_phone">
+                              </div>
+                           </div>
                            <span class="material-input"></span>
                         </div>
-                        <div class="form-group is-empty">
-                           <label class="control-label" for="textarea">Profession Title</label>
-                           <input type="text" class="form-control" placeholder="Headline (e.g. Front-end developer)">
-                           <span class="material-input"></span>
-                        </div>
+      
                         <div class="form-group is-empty">
                            <label class="control-label" for="textarea">Marital Status</label>
-                           <select class="form-control" id="sel1">
+                           <select class="form-control" name="marital_status" id="marital_status">
                               <option>Single</option>
                               <option>Married</option>
-                              <option>Widowed</option>
-                              <option>Separated</option>
-                              <option>Divorced</option>
                            </select>
                            <span class="material-input"></span>
                         </div>
-                        <div class="form-group is-empty">
-                           <label class="control-label" for="textarea"> Location for Job</label>
-                           <select class="form-control" id="sel1">
-                              <option>Matara</option>
+                                                <div class="form-group is-empty">
+                           <label class="control-label" for="textarea"> Current Residence</label>
+                           <select class="form-control" name="current_residence" id="current_residence">
+                              <option>Ampara</option>
+                              <option>Anuradhapura</option>
+                              <option>Badulla</option>
+                              <option>Batticaloa</option>
                               <option>Colombo</option>
-                              <option>Widowed</option>
+                              <option>Galle</option>
+                              <option>Gampaha</option>
+                              <option>Hambantota</option>
+                              <option>Jaffna</option>
+                              <option>Kalutara</option>
+                              <option>Kandy</option>
+                              <option>Kegalle</option>
+                              <option>Kilinochchi</option>
+                              <option>Kurunegala</option>
+                              <option>Mannar</option>
+                              <option>Matara</option>
+                              <option>Monaragala</option>
+                              <option>Mullaitivu</option>
+                              <option>Nuwara Eliya</option>
+                              <option>Polonnaruwa</option>
+                              <option>Puttalam</option>
+                              <option>Ratnapura</option>
+                              <option>Trincomalee</option>
+                              <option>Vavuniya</option>
                            </select>
                            <span class="material-input"></span>
                         </div>
+                                          <div class="form-group is-empty">
+                           <label class="control-label" for="textarea">Apply Position</label>
+                           <input type="text" class="form-control" placeholder="Headline (e.g. Front-end developer)" readonly="readonly" name="apply_position" id="apply_position">
+                           <span class="material-input"></span>
+                        </div>
                         <div class="form-group is-empty">
-                           <label class="control-label" for="textarea">Salary Expec</label>
-                           <input type="text" class="form-control" placeholder="Website address">
+                           <label class="control-label" for="textarea">Salary Expectation</label>
+                           <input type="text" class="form-control" placeholder="Salary Expec  e.g 45,000" name="salary_expectation" id="salary_expectation">
                            <span class="material-input"></span>
                         </div>
                         <div class="form-group">
@@ -150,40 +178,59 @@
                         </div>
                         <div class="form-group is-empty">
                            <label class="control-label" for="textarea">Current Designation</label>
-                           <input type="text" class="form-control" placeholder="Major, e.g Computer Science">
+                           <input type="text" class="form-control" placeholder="Major, e.g Computer Science" name="current_designation" id="current_designation">
                            <span class="material-input"></span>
                         </div>
                         <div class="form-group is-empty">
-                           <label class="control-label" for="textarea"> Experience in years</label>
-                           <select class="form-control" id="sel1">
-                              <option>Less than year</option>
-                              <option>O/L</option>
-                              <option>Degree</option>
+                           <label class="control-label" for="textarea"> Total years of Experiance</label>
+                           <select class="form-control" name="total_experiance" id="total_experiance">
+                            <option>None</option>
+                              <option>Less than one year</option>
+                              <option>Less than two year</option>
+                              <option>Less than three year</option>
+                              <option>Less than five year</option>
+                              <option>Less than seven year</option>
+                              <option>Less than ten year</option>
                            </select>
                            <span class="material-input"></span>
                         </div>
                         <div class="form-group is-empty">
                            <label class="control-label" for="textarea"> Highest Qualification</label>
-                           <select class="form-control" id="sel1">
+
+                                                   <div class="row">
+                              <div class="col-md-6">
+                                 <label class="control-label" for="textarea">Qualification</label>
+                                  <select class="form-control" name="qualification" id="qualification">
                               <option>A/L</option>
                               <option>O/L</option>
                               <option>Degree</option>
+                              <option>Bachelor</option>
+                              o<ption>Master</option>
                            </select>
+                              </div>
+                              <div class="col-md-6">
+                                 <label class="control-label" for="textarea">Name</label>
+                                 <input class="form-control" placeholder="Enter Your Home Phone Number" type="text" name="qualification_name" id="qualification_name">
+                              </div>
+                           </div>
+
+
+
                            <span class="material-input"></span>
                         </div>
                         <div class="form-group is-empty">
                            <label class="control-label" for="textarea">Description</label>
-                           <textarea class="form-control" rows="7"></textarea>
+                           <textarea class="form-control" rows="7" name="description" id="description">></textarea>
                            <span class="material-input"></span>
                         </div>
                         <div class="divider">
-                           <h3>Skills</h3>
+                           <h3>Specialized area</h3>
                         </div>
                         <div class="form-group is-empty">
                            <div class="row">
                               <div class="col-md-6">
                                  <label class="control-label" for="textarea">Skill Name</label>
-                                 <input class="form-control" placeholder="Skill name, e.g. HTML" type="text">
+                                 <input class="form-control" placeholder="Skill name, e.g. HTML" type="text" name="skill" id="skill">
                               </div>
                               <div class="col-md-6">
                                  <label class="control-label" for="textarea">% (1-100)</label>
@@ -213,8 +260,8 @@
                               <br>
                            </div>
                         </div>
+                         <input type="submit" class="btn btn-common" value="Save">
                      </form>
-                     <a href="resume.html" class="btn btn-common">Save</a>
                   </div>
                </div>
             </div>

@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand logo" href="index.html"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt=""></a>
+                  <a class="navbar-brand logo" href="index.html"><img src="<?php echo base_url(); ?><?php echo base_url(); ?>assets/img/logo.png" alt=""></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbar">              
@@ -130,7 +130,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right float-right">
                   <li class="left"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>
-                  <li class="right"><a href="my-account.html"><i class="ti-lock"></i>  Sign In</a></li>
+                  <li class="right"><a href="<?php echo base_url(); ?>/index.php/login"><i class="ti-lock"></i>  Sign In</a></li>
                 </ul>
               </div>                           
             </div>
