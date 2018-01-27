@@ -23,3 +23,5 @@ ALTER TABLE `resume` ADD `HighestQualificationTitle` VARCHAR(20) NOT NULL AFTER 
 ALTER TABLE `resume` ADD `SpecializedAreaId` INT NOT NULL AFTER `ApplyPosition`;
 
 ALTER TABLE `resume` ADD `skill` VARCHAR(30) NOT NULL AFTER `ApplyPosition`;
+
+ALTER TABLE `resume` CHANGE `skill` `Skills` VARCHAR(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;

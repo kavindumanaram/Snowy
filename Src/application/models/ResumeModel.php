@@ -7,11 +7,15 @@ class ResumeModel extends CI_Model{
 	$this->load->database("snowydatabase");
 	}
 
-
-
 		public function insert_resume($data)
 	{
 		return $this->db->insert('resume', $data);
+	}
+
+	public function get_all_rresumes()
+	{
+		$query = $this->db->get('resume');
+		return $query->result();
 	}
 }
 ?>

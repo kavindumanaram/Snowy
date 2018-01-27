@@ -157,7 +157,7 @@
                 <ul>
                   <li><a href="browse-jobs.html">Browse Jobs</a></li>
                   <li><a href="browse-categories.html">Browse Categories</a></li>
-                  <li><a href="add-resume.html">Add Resume</a></li>
+                  <li><a href="<?php echo base_url();?>/resume/add_resume">Add Resume</a></li>
                   <li><a href="manage-resumes.html">Manage Resumes</a></li>
                   <li><a href="job-alerts.html">Job Alerts</a></li>
                 </ul>
@@ -168,7 +168,7 @@
                   <li><a href="post-job.html">Add Job</a></li>
                   <li><a href="manage-jobs.html">Manage Jobs</a></li>
                   <li><a href="manage-applications.html">Manage Applications</a></li>
-                  <li><a href="browse-resumes.html">Browse Resumes</a></li>
+                  <li><a href="<?php echo base_url();?>/resume/browse">">Browse Resumes</a></li>
                 </ul>
               </li> 
               <li>

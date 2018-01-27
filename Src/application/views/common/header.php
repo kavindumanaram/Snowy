@@ -122,7 +122,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="browse-resumes.html">
+                        <a href="<?php echo base_url();?>/resume/browse">
                         Browse Resumes
                         </a>
                       </li>
