@@ -6,6 +6,8 @@ class Resume extends CI_Controller {
 	{
 	parent::__construct();
 	#$this->load->helper('url');
+	 parent::__construct();
+        $this->load->library('form_validation');
 	$this->load->model('ResumeModel');
 	//$this->load->database();
 	}
@@ -17,6 +19,9 @@ class Resume extends CI_Controller {
 
 	public function add()
 	{
+
+		 $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
+
 		$data['Title'] = $this->input->post('title');
 		$data['Name'] = $this->input->post('name');
 		$data['Nic'] = $this->input->post('nic');
@@ -36,8 +41,31 @@ class Resume extends CI_Controller {
 		$data['Description'] = $this->input->post('description');
 		$data['skill'] = $this->input->post('skill');
 
-		$result = $this->ResumeModel->insert_resume($data);
-		redirect('Resume/index');
+		//$result = $this->ResumeModel->insert_resume($data);
+
+		  if (isset($data['Email'])) {
+        $data['email'] = $data['Email'];
+    } else {
+        $data['email'] = "";
+}
+
+        $data['message'] = "";
+
+    //    echo $data['email'];
+
+        if (($this->form_validation->run() == FALSE) ) {
+        	$this->load->view('add_resume', $data);
+        }
+        else
+        {
+        	//echo "true";
+        	$this->load->view('add_resume', $data);
+
+        
+    }
+//echo ($this->form_validation->run() == true);
+		//redirect('Resume/index');
+   // echo  ($this->form_validation->run() == false)."sss";
 	}
 
 
