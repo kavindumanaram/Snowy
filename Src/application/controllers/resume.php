@@ -44,6 +44,6 @@ class Resume extends CI_Controller {
 	public function browse()
 	{		
 		$data['records'] = $this->ResumeModel->get_all_rresumes();
-		$this->load->view('browse-resumes', $data);					
+		$this->load->view('browse_resumes', $data);					
 	}	
 }

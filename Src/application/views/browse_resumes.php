@@ -88,12 +88,12 @@
                     </ul>
                   </li>
                   <li>
-                    <a class="active" href="about.html">
+                    <a href="about.html">
                     Pages <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown">
                       <li>
-                        <a class="active" href="about.html">
+                        <a href="about.html">
                         About
                         </a>
                       </li>
@@ -167,7 +167,7 @@
                     </ul>
                   </li>
                   <li>
-                    <a href="#">
+                    <a class="active" href="#">
                     Employers <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown">
@@ -187,7 +187,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="browse-resumes.html">
+                        <a class="active" href="browse-resumes.html">
                         Browse Resumes
                         </a>
                       </li>
@@ -258,12 +258,12 @@
                 </ul>
               </li>
               <li>
-                <a href="#">For Employers</a>
+                <a class="active" href="#">For Employers</a>
                 <ul>
                   <li><a href="post-job.html">Add Job</a></li>
                   <li><a href="manage-jobs.html">Manage Jobs</a></li>
                   <li><a href="manage-applications.html">Manage Applications</a></li>
-                  <li><a href="browse-resumes.html">Browse Resumes</a></li>
+                  <li><a class="active" href="browse-resumes.html">Browse Resumes</a></li>
                 </ul>
               </li> 
               <li>
@@ -325,10 +325,10 @@
           <div class="row">         
             <div class="col-md-12">
               <div class="breadcrumb-wrapper">
-                <h2 class="product-title">Job Alerts</h2>
+                <h2 class="product-title">Browse resumes</h2>
                 <ol class="breadcrumb">
                   <li><a href="#"><i class="ti-home"></i> Home</a></li>
-                  <li class="current">Job Alerts</li>
+                  <li class="current">Browse resumes</li>
                 </ol>
               </div>
             </div>
@@ -340,43 +340,134 @@
     <section class="section text-center" >
 <div class="container">
 <div class="row">
-<div class="col-md-4 col-sm-4 col-xs-12">
-<div class="right-sideabr">
-<div class="inner-box">
-<h4>Manage Account</h4>
-<ul class="lest item">
-<li><a href="resume.html">My Resume</a></li>
-<li><a href="bookmarked.html">Bookmarked Jobs</a></li>
-<li><a href="notifications.html">Notifications <span class="notinumber">2</span></a></li>
-</ul>
-<h4>Manage Job</h4>
-<ul class="lest item">
-<li><a href="manage-applications.html">Manage Applications</a></li>
-<li><a href="job-alerts.html">Job Alerts</a></li>
-</ul>
-<ul class="lest">
-<li><a class="active" href="change-password.html">Change Password</a></li>
-<li><a href="index.html">Sing Out</a></li>
-</ul>
+<div class="col-md-12 col-sm-6 col-xs-12">
+<div class="manager-resumes-item">
+<div class="manager-content">
+<a href="resume.html"><img class="resume-thumb" src="assets/img/jobs/avatar.jpg" alt=""></a>
+<div class="manager-info">
+<div class="manager-name">
+<h4><a href="#">John Doe</a></h4>
+<h5>Front-end developer</h5>
+</div>
+<div class="manager-meta">
+<span class="location"><i class="ti-location-pin"></i> Cupertino, CA, USA</span>
+<span class="rate"><i class="ti-time"></i> $55 per hour</span>
 </div>
 </div>
 </div>
-<div class="col-md-8 col-sm-8 col-xs-12">
-<div class="job-alerts-item">
-<h3 class="alerts-title">Change Password</h3>
-<form class="form">
-<div class="form-group is-empty">
-<label class="control-label" for="textarea">Old Password*</label>
-<input class="form-control" type="text">
-<span class="material-input"></span>
-<span class="material-input"></span></div>
-<div class="form-group is-empty">
-<label class="control-label" for="textarea">New Password*</label>
-<input class="form-control" type="text">
-<span class="material-input"></span>
-<span class="material-input"></span></div>
-<a href="#" id="submit" class="btn btn-common">Save Change</a>
-</form>
+<div class="item-body">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, qui aspernatur accusantium! Molestiae, cum cupiditate nam optio dignissimos magnam velit, perspiciatis amet qui aut nobis, quisquam, laudantium vitae eos ipsam.</p>
+<div class="tag-list">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>Bootstrap</span>
+<span>Wordpress</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="manager-resumes-item">
+<div class="manager-content">
+<a href="resume.html"><img class="resume-thumb" src="assets/img/jobs/avatar-1.jpg" alt=""></a>
+<div class="manager-info">
+<div class="manager-name">
+<h4><a href="#">Bikesh Soltaniane</a></h4>
+<h5>Java developer</h5>
+</div>
+<div class="manager-meta">
+<span class="location"><i class="ti-location-pin"></i> Cupertino, CA, USA</span>
+<span class="rate"><i class="ti-time"></i> $55 per hour</span>
+</div>
+</div>
+</div>
+<div class="item-body">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, qui aspernatur accusantium! Molestiae, cum cupiditate nam optio dignissimos magnam velit, perspiciatis amet qui aut nobis, quisquam, laudantium vitae eos ipsam.</p>
+<div class="tag-list">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>Bootstrap</span>
+<span>Wordpress</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="manager-resumes-item">
+<div class="manager-content">
+<a href="resume.html"><img class="resume-thumb" src="assets/img/jobs/avatar-2.jpg" alt=""></a>
+<div class="manager-info">
+<div class="manager-name">
+<h4><a href="#">Chris Hernandeziyan</a></h4>
+<h5>.Net developer</h5>
+</div>
+<div class="manager-meta">
+<span class="location"><i class="ti-location-pin"></i> Cupertino, CA, USA</span>
+<span class="rate"><i class="ti-time"></i> $55 per hour</span>
+</div>
+</div>
+</div>
+<div class="item-body">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, qui aspernatur accusantium! Molestiae, cum cupiditate nam optio dignissimos magnam velit, perspiciatis amet qui aut nobis, quisquam, laudantium vitae eos ipsam.</p>
+<div class="tag-list">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>Bootstrap</span>
+<span>Wordpress</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="manager-resumes-item">
+<div class="manager-content">
+<a href="resume.html"><img class="resume-thumb" src="assets/img/jobs/avatar-3.jpg" alt=""></a>
+<div class="manager-info">
+<div class="manager-name">
+<h4><a href="#">Mary Amiri</a></h4>
+<h5>Quality assurance</h5>
+</div>
+<div class="manager-meta">
+<span class="location"><i class="ti-location-pin"></i> Cupertino, CA, USA</span>
+<span class="rate"><i class="ti-time"></i> $55 per hour</span>
+</div>
+</div>
+</div>
+<div class="item-body">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, qui aspernatur accusantium! Molestiae, cum cupiditate nam optio dignissimos magnam velit, perspiciatis amet qui aut nobis, quisquam, laudantium vitae eos ipsam.</p>
+<div class="tag-list">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>Bootstrap</span>
+<span>Wordpress</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="manager-resumes-item">
+<div class="manager-content">
+<a href="resume.html"><img class="resume-thumb" src="assets/img/jobs/avatar-4.jpg" alt=""></a>
+<div class="manager-info">
+<div class="manager-name">
+<h4><a href="#">Sarah Luizgarden</a></h4>
+<h5>UI/UX developer</h5>
+</div>
+<div class="manager-meta">
+<span class="location"><i class="ti-location-pin"></i> Cupertino, CA, USA</span>
+<span class="rate"><i class="ti-time"></i> $55 per hour</span>
+</div>
+</div>
+</div>
+<div class="item-body">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, qui aspernatur accusantium! Molestiae, cum cupiditate nam optio dignissimos magnam velit, perspiciatis amet qui aut nobis, quisquam, laudantium vitae eos ipsam.</p>
+<div class="tag-list">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>Bootstrap</span>
+<span>Wordpress</span>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -394,7 +485,7 @@
                 <div class="widget">
                   <h3 class="block-title"><img src="assets/img/logo.png" class="img-responsive" alt="Footer Logo"></h3>
                   <div class="textwidget">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis tincidunt est, et euismod purus suscipit quis. Etiam euismod ornare elementum. Sed ex est, consectetur eget facilisis sed, auctor ut purus.</p>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, qui aspernatur accusantium! Molestiae, cum cupiditate nam optio dignissimos magnam velit, perspiciatis amet qui aut nobis, quisquam, laudantium vitae eos ipsam.</p>
                   </div>
                 </div>
               </div>

@@ -10,33 +10,33 @@
     <title>JobBoard - Bootstrap HTML5 Job Portal Template</title>    
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">    
-    <link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css" type="text/css">  
-    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" type="text/css">  
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" type="text/css">    
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jasny-bootstrap.min.css" type="text/css">  
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-select.min.css" type="text/css">  
     <!-- Material CSS -->
-    <link rel="stylesheet" href="assets/css/material-kit.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/material-kit.css" type="text/css">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" type="text/css"> 
-    <link rel="stylesheet" href="assets/fonts/themify-icons.css"> 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/font-awesome.min.css" type="text/css"> 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/themify-icons.css"> 
 
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="assets/extras/animate.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/extras/animate.css" type="text/css">
     <!-- Owl Carousel -->
-    <link rel="stylesheet" href="assets/extras/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="assets/extras/owl.theme.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/extras/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/extras/owl.theme.css" type="text/css">
     <!-- Rev Slider CSS -->
-    <link rel="stylesheet" href="assets/extras/settings.css" type="text/css"> 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/extras/settings.css" type="text/css"> 
     <!-- Slicknav js -->
-    <link rel="stylesheet" href="assets/css/slicknav.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/slicknav.css" type="text/css">
     <!-- Main Styles -->
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css" type="text/css">
     <!-- Responsive CSS Styles -->
-    <link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css" type="text/css">
 
     <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/colors/red.css" media="screen" />
     
   </head>
 
@@ -54,7 +54,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand logo" href="index.html"><img src="assets/img/logo.png" alt=""></a>
+                <a class="navbar-brand logo" href="index.html"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt=""></a>
               </div>
 
               <div class="collapse navbar-collapse" id="navbar">              
@@ -88,12 +88,12 @@
                     </ul>
                   </li>
                   <li>
-                    <a class="active" href="about.html">
+                    <a href="about.html">
                     Pages <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown">
                       <li>
-                        <a class="active" href="about.html">
+                        <a href="about.html">
                         About
                         </a>
                       </li>
@@ -135,12 +135,12 @@
                     </ul>
                   </li>
                   <li>
-                    <a href="#">
+                    <a class="active" href="#">
                     Candidates <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown">
                       <li>
-                        <a href="browse-jobs.html">
+                        <a class="active" href="browse-jobs.html">
                         Browse Jobs
                         </a>
                       </li>
@@ -248,9 +248,9 @@
                 </ul>
               </li>
               <li>
-                <a href="#">For Candidates</a>
+                <a class="active" href="#">For Candidates</a>
                 <ul>
-                  <li><a href="browse-jobs.html">Browse Jobs</a></li>
+                  <li><a class="active" href="browse-jobs.html">Browse Jobs</a></li>
                   <li><a href="browse-categories.html">Browse Categories</a></li>
                   <li><a href="add-resume.html">Add Resume</a></li>
                   <li><a href="manage-resumes.html">Manage Resumes</a></li>
@@ -316,73 +316,236 @@
           <div class="tbtn wow pulse" id="menu" data-wow-iteration="infinite" data-wow-duration="500ms" data-toggle="offcanvas" data-target=".navmenu">
             <p><i class="ti-files"></i> All Pages</p>
           </div>
+        </div>
       </div>
       <!-- Header Section End -->  
 
       <!-- Page Header Start -->
-      <div class="page-header" style="background: url(assets/img/banner1.jpg);">
+      <div class="page-header" style="background: url(<?php echo base_url(); ?>assets/img/banner1.jpg);">
         <div class="container">
           <div class="row">         
             <div class="col-md-12">
               <div class="breadcrumb-wrapper">
-                <h2 class="product-title">Job Alerts</h2>
+                <h2 class="product-title">Browse Job</h2>
                 <ol class="breadcrumb">
                   <li><a href="#"><i class="ti-home"></i> Home</a></li>
-                  <li class="current">Job Alerts</li>
+                  <li class="current">Browse Job</li>
                 </ol>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Page Header End --> 
+      <!-- Page Header End -->      
 
-    <section class="section text-center" >
-<div class="container">
-<div class="row">
-<div class="col-md-4 col-sm-4 col-xs-12">
-<div class="right-sideabr">
-<div class="inner-box">
-<h4>Manage Account</h4>
-<ul class="lest item">
-<li><a href="resume.html">My Resume</a></li>
-<li><a href="bookmarked.html">Bookmarked Jobs</a></li>
-<li><a href="notifications.html">Notifications <span class="notinumber">2</span></a></li>
-</ul>
-<h4>Manage Job</h4>
-<ul class="lest item">
-<li><a href="manage-applications.html">Manage Applications</a></li>
-<li><a href="job-alerts.html">Job Alerts</a></li>
-</ul>
-<ul class="lest">
-<li><a class="active" href="change-password.html">Change Password</a></li>
-<li><a href="index.html">Sing Out</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8 col-sm-8 col-xs-12">
-<div class="job-alerts-item">
-<h3 class="alerts-title">Change Password</h3>
-<form class="form">
-<div class="form-group is-empty">
-<label class="control-label" for="textarea">Old Password*</label>
-<input class="form-control" type="text">
-<span class="material-input"></span>
-<span class="material-input"></span></div>
-<div class="form-group is-empty">
-<label class="control-label" for="textarea">New Password*</label>
-<input class="form-control" type="text">
-<span class="material-input"></span>
-<span class="material-input"></span></div>
-<a href="#" id="submit" class="btn btn-common">Save Change</a>
-</form>
-</div>
-</div>
-</div>
-</div>
-      </div>
-    </section>
+      <!-- Job Browse Section Start -->  
+      <section class="job-browse section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-sm-8">
+              <div class="job-list">
+                <div class="thumb">
+                  <a href="job-details.html"><img src="<?php echo base_url(); ?>assets/img/jobs/img-1.jpg" alt=""></a>
+                </div>
+                <div class="job-list-content">
+                  <h4><a href="job-details.html">We need a web designer</a><span class="full-time">Full-Time</span></h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit, officiis, praesentium?</p>
+                  <div class="job-tag">
+                    <div class="pull-left">
+                      <div class="meta-tag">
+                        <span><a href="browse-categories.html"><i class="ti-brush"></i>Art/Design</a></span>
+                        <span><i class="ti-location-pin"></i>Cupertino, CA, USA</span>
+                        <span><i class="ti-time"></i>60/Hour</span>
+                      </div>
+                    </div>
+                    <div class="pull-right">
+                      <div class="icon">
+                        <i class="ti-heart"></i>
+                      </div>
+                      <div class="btn btn-common btn-rm">More Detail</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job-list">
+                <div class="thumb">
+                  <a href="job-details.html"><img src="<?php echo base_url(); ?>assets/img/jobs/img-2.jpg" alt=""></a>
+                </div>
+                <div class="job-list-content">
+                  <h4><a href="job-details.html">Front-end developer needed</a><span class="full-time">Full-Time</span></h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit, officiis, praesentium?</p>
+                  <div class="job-tag">
+                    <div class="pull-left">
+                      <div class="meta-tag">
+                        <span><a href="browse-categories.html"><i class="ti-desktop"></i>Technologies</a></span>
+                        <span><i class="ti-location-pin"></i>Cupertino, CA, USA</span>
+                        <span><i class="ti-time"></i>60/Hour</span>
+                      </div>
+                    </div>
+                    <div class="pull-right">
+                      <div class="icon">
+                        <i class="ti-heart"></i>
+                      </div>
+                      <div class="btn btn-common btn-rm">More Detail</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job-list">
+                <div class="thumb">
+                  <a href="job-details.html"><img src="<?php echo base_url(); ?>assets/img/jobs/img-3.jpg" alt=""></a>
+                </div>
+                <div class="job-list-content">
+                  <h4><a href="job-details.html">Software Enginner</a><span class="part-time">Part-Time</span></h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit, officiis, praesentium?</p>
+                  <div class="job-tag">
+                    <div class="pull-left">
+                      <div class="meta-tag">
+                        <span><a href="browse-categories.html"><i class="ti-desktop"></i>Technologies</a></span>
+                        <span><i class="ti-location-pin"></i>Cupertino, CA, USA</span>
+                        <span><i class="ti-time"></i>60/Hour</span>
+                      </div>
+                    </div>
+                    <div class="pull-right">
+                      <div class="icon">
+                        <i class="ti-heart"></i>
+                      </div>
+                      <div class="btn btn-common btn-rm">More Detail</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job-list">
+                <div class="thumb">
+                  <a href="job-details.html"><img src="<?php echo base_url(); ?>assets/img/jobs/img-4.jpg" alt=""></a>
+                </div>
+                <div class="job-list-content">
+                  <h4><a href="job-details.html">Fullstack web developer needed</a><span class="full-time">Full-Time</span></h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quaerat aut veniam molestiae atque dolorum omnis temporibus consequuntur saepe. Nemo atque consectetur saepe corporis odit in dicta reprehenderit, officiis, praesentium?</p>
+                  <div class="job-tag">
+                    <div class="pull-left">
+                      <div class="meta-tag">
+                        <span><a href="browse-categories.html"><i class="ti-desktop"></i>Technologies</a></span>
+                        <span><i class="ti-location-pin"></i>Cupertino, CA, USA</span>
+                        <span><i class="ti-time"></i>60/Hour</span>
+                      </div>
+                    </div>
+                    <div class="pull-right">
+                      <div class="icon">
+                        <i class="ti-heart"></i>
+                      </div>
+                      <div class="btn btn-common btn-rm">More Detail</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Start Pagination -->
+              <ul class="pagination">              
+                <li class="active"><a href="#" class="btn btn-common" ><i class="ti-angle-left"></i> prev</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li class="active"><a href="#" class="btn btn-common">Next <i class="ti-angle-right"></i></a></li>
+              </ul>
+              <!-- End Pagination -->
+            </div>
+            <div class="col-md-3 col-sm-4">
+              <aside>
+                <div class="sidebar">
+					                  <div class="inner-box">
+                    <h3>Search</h3>
+                    <br/>
+  
+ <ul class="cat-list">
+ <li>
+ <form action="#">
+<div class="form-group is-empty"><input class="form-control search" type="search" placeholder="Enter your keyword"><span class="material-input"></span></div><br/>
+<button class="search-btn" type="submit" style="right: 54px; top: 98px;"><i class="fa fa-search"></i></button>
+</form>  
+ </li>
+                      <li>
+<button type="button" class="btn btn-common btn-rm" data-toggle="modal" data-target="#myModal">Add New Job</button>						
+                      </li>
+</ul>					  
+                  </div>
+                  <div class="inner-box">
+                    <h3>Categories</h3>
+                    <ul class="cat-list">
+                      <li>
+                        <a href="#">Finance <span class="num-posts">4,287 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Techonologies <span class="num-posts">4,256 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Art/Design<span class="num-posts">3,245 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Science <span class="num-posts">4,256 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Education Training <span class="num-posts">4,560 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Logistics <span class="num-posts">3,256 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Food Services <span class="num-posts">1,256 Jobs</span></a>                   
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="inner-box">
+                    <h3>Job Status</h3>
+                    <ul class="cat-list">
+                      <li>
+                        <a href="#">Full Time <span class="num-posts">12,256 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Part Time <span class="num-posts">6,510 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Freelancer <span class="num-posts">1,171 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Internship <span class="num-posts">876 Jobs</span></a>                    
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="inner-box">
+                    <h3>Locations</h3>
+                    <ul class="cat-list">
+                      <li>
+                        <a href="#">New York <span class="num-posts">4,197 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">San Francisco <span class="num-posts">2,256 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">San Diego <span class="num-posts">3,278 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Los Angeles <span class="num-posts">5,294 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Chicago <span class="num-posts">1,746 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">Houston <span class="num-posts">871 Jobs</span></a>                    
+                      </li>
+                      <li>
+                        <a href="#">New Orleans <span class="num-posts">2,163 Jobs</span></a>                   
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Job Browse Section End --> 
 
       <!-- Footer Section Start -->
       <footer>
@@ -392,7 +555,7 @@
             <div class="row">
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="widget">
-                  <h3 class="block-title"><img src="assets/img/logo.png" class="img-responsive" alt="Footer Logo"></h3>
+                  <h3 class="block-title"><img src="<?php echo base_url(); ?>assets/img/logo.png" class="img-responsive" alt="Footer Logo"></h3>
                   <div class="textwidget">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis tincidunt est, et euismod purus suscipit quis. Etiam euismod ornare elementum. Sed ex est, consectetur eget facilisis sed, auctor ut purus.</p>
                   </div>
@@ -478,24 +641,47 @@
           </div>
         </div>
       </div>
-        
+	  
+	<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-common btn-rm" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  	
     <!-- Main JS  -->
-    <script type="text/javascript" src="assets/js/jquery-min.js"></script>      
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>    
-    <script type="text/javascript" src="assets/js/material.min.js"></script>
-    <script type="text/javascript" src="assets/js/material-kit.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.slicknav.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-    <script type="text/javascript" src="assets/js/waypoints.min.js"></script>
-    <script type="text/javascript" src="assets/js/jasny-bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="assets/js/form-validator.min.js"></script>
-    <script type="text/javascript" src="assets/js/contact-form-script.js"></script>    
-    <script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-min.js"></script>      
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/material.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/material-kit.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.slicknav.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/main.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/form-validator.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/contact-form-script.js"></script>    
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.themepunch.tools.min.js"></script>
       
   </body>
 </html>
