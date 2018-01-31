@@ -65,7 +65,10 @@
                      <div class="post-header">
                         <p>Already have an account? <a href="login.php">Click here to login</a></p>
                      </div>
-                     <form class="form-ad" method="post" action="<?php echo base_url();?>index.php/Resume/add">
+                     <?php echo $error;?> 
+                     <?php echo form_open_multipart('Resume/add');?> 
+                     <form class="form-ad" method="post" action="">
+
                         <div class="divider">
                            <h3>Basic information</h3>
                         </div>
@@ -168,7 +171,7 @@
                               <div class="action-buttons">
                                  <div class="upload-button">
                                     <button class="btn btn-common">Change profile image</button>
-                                    <input id="cover_img_file" type="file">
+                                    <input type = "file" name = "userfile" size = "20" /> 
                                  </div>
                               </div>
                            </div>
@@ -253,7 +256,7 @@
                                  <div class="action-buttons">
                                     <div class="upload-button">
                                        <button class="btn btn-common">Upload Your CV</button>
-                                       <input id="cover_img_file" type="file">
+                                       <input type = "file" name = "usercvfile" size = "20" /> 
                                     </div>
                                  </div>
                               </div>
