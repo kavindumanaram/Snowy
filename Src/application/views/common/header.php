@@ -122,7 +122,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="<?php echo base_url();?>/resume/browse">
+                        <a href="<?php echo base_url();?>index.php/resume/browse">
                         Browse Resumes
                         </a>
                       </li>
@@ -169,7 +169,7 @@
                   <li><a href="post-job.html">Add Job</a></li>
                   <li><a href="manage-jobs.html">Manage Jobs</a></li>
                   <li><a href="manage-applications.html">Manage Applications</a></li>
-                  <li><a href="browse-resumes.html">Browse Resumes</a></li>
+                  <li><a href="<?php echo base_url(); ?>index.php/Resume/browse">Browse Resumes</a></li>
                 </ul>
               </li> 
               <li>
