@@ -2,7 +2,7 @@
 
 class Resume extends CI_Controller {
 
-		function __construct()
+	function __construct()
 	{
 	parent::__construct();
 	#$this->load->helper('url');
@@ -34,7 +34,7 @@ class Resume extends CI_Controller {
 		$data['HighestQualificationTitle'] = $this->input->post('qualification');
 	//	$data['HighestQualificationId'] = $this->input->post('qualification_name');
 		$data['Description'] = $this->input->post('description');
-		$data['skill'] = $this->input->post('skill');
+		$data['Skills'] = $this->input->post('skill');
 
 		$result = $this->ResumeModel->insert_resume($data);
 		redirect('Resume/index');
