@@ -121,7 +121,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="browse-resumes.html">
+                        <a href="<?php echo base_url();?>index.php/ResumeController/browse">
                         Browse Resumes
                         </a>
                       </li>
@@ -168,18 +168,9 @@
                   <li><a href="post-job.html">Add Job</a></li>
                   <li><a href="manage-jobs.html">Manage Jobs</a></li>
                   <li><a href="manage-applications.html">Manage Applications</a></li>
-                  <li><a href="<?php echo base_url();?>/resume/browse">">Browse Resumes</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/ResumeController/browse">">Browse Resumes</a></li>
                 </ul>
               </li> 
-              <li>
-                <a href="blog.html">Blog</a>
-                <ul class="dropdown">
-                  <li><a href="blog.html">Blog - Right Sidebar</a></li>
-                  <li><a href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                  <li><a href="blog-full-width.html">Blog - Full Width</a></li>
-                  <li><a href="single-post.html">Blog Single Post</a></li>
-                </ul>
-              </li>  
               <li class="btn-m"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>
               <li class="btn-m"><a href="my-account.html"><i class="ti-lock"></i>  Log In</a></li>          
             </ul>
