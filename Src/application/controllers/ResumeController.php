@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Resume extends CI_Controller {
+class ResumeController extends CI_Controller {
 
     function __construct() {
         parent::__construct();
@@ -20,7 +20,7 @@ class Resume extends CI_Controller {
 
         $this->data['notification'] = '';
 
-        if ($this->input->post('upload')) 
+        if ($this->input->post('upload'))
             {
             $config['upload_path'] = './assets/uploads/';
             $config['allowed_types'] = 'gif|jpg|png|jpeg|pdf';
@@ -67,7 +67,7 @@ class Resume extends CI_Controller {
         } else {
             $upload_data = $this->upload->data();
 
-            $this->data['notification'] .= $upload_data['file_name'] . " is successfully uploaded.<br>";
+        //    $this->data['notification'] .= $upload_data['file_name'] . " is successfully uploaded.<br>";
         }
     }
 

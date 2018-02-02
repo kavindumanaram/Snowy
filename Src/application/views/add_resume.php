@@ -63,7 +63,7 @@
                     <div class="col-md-9 col-md-offset-2">
                         <div class="page-ads box">
                             <div class="post-header">
-                                <p>Already have an account? <a href="login.php">Click here to login</a></p>
+                                <p>Already have an account? <a href="<?php echo base_url(); ?>index.php/AuthController/Login">Click here to login</a></p>
                             </div>
                             <?php //echo $error;?> 
                             <?php
@@ -73,7 +73,7 @@
             <p>' . $notification . '</p>';    //<!-- For the status of the uploaded files ( error or success ) -->
                             }
                             ?>
-                            <?php echo form_open_multipart('Resume/add'); ?> 
+                            <?php echo form_open_multipart('ResumeController/add'); ?> 
                             <form class="form-ad" method="post" action="">
 
                                 <div class="divider">
@@ -232,7 +232,7 @@
                                 </div>
                                 <div class="form-group is-empty">
                                     <label class="control-label" for="textarea">Description</label>
-                                    <textarea class="form-control" rows="7" name="description" id="description">></textarea>
+                                    <textarea class="form-control" rows="7" name="description" id="description"></textarea>
                                     <span class="material-input"></span>
                                 </div>
                                 <div class="divider">
