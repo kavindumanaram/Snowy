@@ -25,6 +25,7 @@ class ResumeController extends CI_Controller {
             $config['upload_path'] = './assets/uploads/';
             $config['allowed_types'] = 'gif|jpg|png|jpeg|pdf';
             $config['max_size'] = 10000;
+            $config['file_name'] =  $this->input->post('nic');
            // $config['max_width'] = 1024;
            // $config['max_height'] = 768;
 

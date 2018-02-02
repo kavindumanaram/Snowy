@@ -81,7 +81,8 @@
                                 </div>
                                 <div class="form-group is-empty">
                                     <label class="control-label" for="textarea">Title</label>
-                                    <select class="form-control" id="title" name="title">
+                                    <select class="form-control" id="title" name="title" required >
+                                        <option value="">None</option>
                                         <option>Mr</option>
                                         <option>Mrs</option>
                                         <option>Ms</option>
@@ -91,12 +92,12 @@
                                 </div>
                                 <div class="form-group is-empty">
                                     <label class="control-label" for="textarea">Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter Your Full Name" name="name" id="name">
+                                    <input type="text" class="form-control" placeholder="Enter Your Full Name" name="name" id="name" required >
                                     <span class="material-input"></span>
                                 </div>
                                 <div class="form-group is-empty">
                                     <label class="control-label" for="textarea">NIC</label>
-                                    <input type="text" class="form-control" placeholder="Enter Your Natianal Identity Card Number" name="nic" id="nic">
+                                    <input type="text" class="form-control" placeholder="Enter Your Natianal Identity Card Number" name="nic" id="nic" required >
                                     <span class="material-input"></span>
                                 </div>
                                 <div class="form-group is-empty">
@@ -108,14 +109,14 @@
                                 <div class="form-group is-empty">
                                     <label class="control-label" for="textarea"></label>
                                     <label class="control-label" for="textarea">Email</label>
-                                    <input type="text" class="form-control" placeholder="Enter Your Email Address (eg: Your@domain.com)" name="email" id="email">
+                                    <input type="email" class="form-control" placeholder="Enter Your Email Address (eg: Your@domain.com)" name="email" id="email" required >
                                     <span class="material-input"></span>
                                 </div>
                                 <div class="form-group is-empty">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label class="control-label" for="textarea">Mobile Number</label>
-                                            <input class="form-control" placeholder="Enter Your Mobile Phone Number" type="text" name="mobile" id="mobile">
+                                            <input class="form-control" placeholder="Enter Your Mobile Phone Number" type="text" name="mobile" id="mobile" required >
                                         </div>
                                         <div class="col-md-6">
                                             <label class="control-label" for="textarea">Home Phone</label>
@@ -127,7 +128,8 @@
 
                                 <div class="form-group is-empty">
                                     <label class="control-label" for="textarea">Marital Status</label>
-                                    <select class="form-control" name="marital_status" id="marital_status">
+                                    <select class="form-control" name="marital_status" id="marital_status" required >
+                                        <option>None</option>
                                         <option>Single</option>
                                         <option>Married</option>
                                     </select>
@@ -135,7 +137,8 @@
                                 </div>
                                 <div class="form-group is-empty">
                                     <label class="control-label" for="textarea"> Current Residence</label>
-                                    <select class="form-control" name="current_residence" id="current_residence">
+                                    <select class="form-control" name="current_residence" id="current_residence" required >
+                                        <option>None</option>
                                         <option>Ampara</option>
                                         <option>Anuradhapura</option>
                                         <option>Badulla</option>
@@ -170,7 +173,7 @@
                                 </div>
                                 <div class="form-group is-empty">
                                     <label class="control-label" for="textarea">Salary Expectation</label>
-                                    <input type="text" class="form-control" placeholder="Salary Expec  e.g 45,000" name="salary_expectation" id="salary_expectation">
+                                    <input type="number" step="any"  class="form-control" placeholder="Salary Expec  e.g 45,000" name="salary_expectation" id="salary_expectation">
                                     <span class="material-input"></span>
                                 </div>
                                 <div class="form-group">
@@ -212,7 +215,8 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label class="control-label" for="textarea">Qualification</label>
-                                            <select class="form-control" name="qualification" id="qualification">
+                                            <select class="form-control" name="qualification" id="qualification" required >
+                                                <option>None</option>
                                                 <option>A/L</option>
                                                 <option>O/L</option>
                                                 <option>Degree</option>
@@ -240,32 +244,20 @@
                                 </div>
                                 <div class="form-group is-empty">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <label class="control-label" for="textarea">Skill Name</label>
-                                            <input class="form-control" placeholder="Skill name, e.g. HTML" type="text" name="skill" id="skill">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="control-label" for="textarea">% (1-100)</label>
-                                            <input class="form-control" placeholder="Skill proficiency, e.g. 90" type="text">
+                                            <input class="form-control" placeholder="Skill name, e.g. HTML, .Net, Communication (With Comma separated values)" type="text" name="skill" id="skill">
                                         </div>
                                     </div>
                                     <span class="material-input"></span><span class="material-input"></span>
-                                </div>
-                                <div class="add-post-btn">
-                                    <div class="pull-left">
-                                        <a href="#" class="btn-added"><i class="ti-plus"></i> Add New Skills</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="#" class="btn-delete"><i class="ti-trash"></i> Delete This</a>
-                                    </div>
                                 </div>
                                 <div class="divider">
                                     <div class="form-group">
                                         <div class="button-group pull-right">
                                             <div class="action-buttons">
                                                 <div class="upload-button">
-                                                    <label class="btn btn-common" for="default">Invoice File</label>
-                                                    <input type="file" name="cv" accept="application/pdf" />
+                                                    <label class="btn btn-common" for="default">Upload CV</label>
+                                                    <input type="file" name="cv" accept="application/pdf" required/>
                                                     <!--                                       <button class="btn btn-common">Upload Your CV</button>
                                                                                            <input type = "file" name = "usercvfile" size = "20" /> -->
                                                 </div>
