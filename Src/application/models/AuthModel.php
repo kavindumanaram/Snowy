@@ -9,7 +9,7 @@ class AuthModel extends CI_Model{
 
 public function register_user($data)
 	{
-		return $this->db->insert('resume', $data);
+		return $this->db->insert('user', $data);
 	}
 
 }

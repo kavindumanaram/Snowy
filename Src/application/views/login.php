@@ -74,10 +74,15 @@
                             <div id="cd-login" class="is-selected">
                                 <div class="page-login-form">
                                     <form role="form" class="login-form">
+                                         <a href="<?php echo base_url();?>index.php/AuthController/register">
+                                        <div class="alert alert-info alert-dismissable">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+                                            <b>Want to be a member? | Register Now! </b>
+                                        </div></a>
                                         <div class="form-group is-empty">
                                             <div class="input-icon">
                                                 <i class="ti-user"></i>
-                                                <input type="text" id="sender-email" class="form-control" name="email" placeholder="Username">
+                                                <input type="email" id="sender-email" class="form-control" name="email" placeholder="Username">
                                             </div>
                                             <span class="material-input"></span></div>
                                         <div class="form-group is-empty">
@@ -94,7 +99,7 @@
                                                     <span class="checkbox-material"></span> Remember Me
                                                 </label>
                                             </div>
-                                            <p class="cd-form-bottom-message"><a href="#0">Lost your password?</a></p>
+                                            <a href="#0">Lost your password?</a> </p>
                                         </div>
                                     </form>
                                 </div>

@@ -1,7 +1,4 @@
 CREATE DATABASE snowyDatabase;
-
-CREATE TABLE `snowydatabase`.`users` ( `id` INT NOT NULL AUTO_INCREMENT , `email` VARCHAR(50) NOT NULL , `password` VARCHAR(50) NOT NULL , `created` TIMESTAMP NOT NULL , `visiting_count` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
-
 --------------------------------------------------------------------------------------------------------
 --  Crate table resume
 --------------------------------------------------------------------------------------------------------
@@ -27,3 +24,12 @@ ALTER TABLE `resume` ADD `skill` VARCHAR(30) NOT NULL AFTER `ApplyPosition`;
 ALTER TABLE `resume` CHANGE `skill` `Skills` VARCHAR(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
 
 ALTER TABLE `resume` ADD `Password` VARCHAR(50) NOT NULL AFTER `Photo`;
+
+--------------------------------------------------------------------------------
+-- Create User table
+--------------------------------------------------------------------------------
+CREATE TABLE `snowydatabase`.`user` ( `UserId` INT NOT NULL AUTO_INCREMENT , `Email` INT(30) NOT NULL , `Password` VARCHAR(50) NOT NULL , `Created` TIMESTAMP NOT NULL , PRIMARY KEY (`UserId`)) ENGINE = InnoDB;
+
+ALTER TABLE `user` CHANGE `Email` `Email` VARCHAR(30) NOT NULL;
+
+ALTER TABLE `user` ADD UNIQUE(`Email`);
