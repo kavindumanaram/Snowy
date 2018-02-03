@@ -130,7 +130,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right float-right">
                   <li class="left"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>
-                  <li class="right"><a href="<?php echo base_url(); ?>index.php/AuthController/Login"><i class="ti-lock"></i>  Sign In</a></li>
+                  <li class="right"><a href="<?php echo base_url(); ?>index.php/AuthController/Login"><i class="ti-lock"></i>  Sign In </a></li>
                 </ul>
               </div>                           
             </div>

@@ -7,7 +7,7 @@ class ResumeController extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('ResumeModel');
+        $this->load->model('resume_model');
         $this->load->helper(array('form', 'url'));
     }
 
@@ -26,8 +26,6 @@ class ResumeController extends CI_Controller {
             $config['allowed_types'] = 'gif|jpg|png|jpeg|pdf';
             $config['max_size'] = 10000;
             $config['file_name'] =  $this->input->post('nic');
-           // $config['max_width'] = 1024;
-           // $config['max_height'] = 768;
 
             $this->load->library('upload', $config);
             $this->lets_upload('cvImage');
@@ -51,14 +49,14 @@ class ResumeController extends CI_Controller {
             $data['Description'] = $this->input->post('description');
             $data['Skills'] = $this->input->post('skill');
 
-            $result = $this->ResumeModel->insert_resume($data);
+            $result = $this->resume_model->insert_resume($data);
         }
 
         $this->load->view('add_resume', $this->data);
     }
 
     public function browse() {
-        $data['records'] = $this->ResumeModel->get_all_rresumes();
+        $data['records'] = $this->resume_model->get_all_rresumes();
         $this->load->view('browse_resumes', $data);
     }
 

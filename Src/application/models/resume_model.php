@@ -1,5 +1,5 @@
 <?php
-class ResumeModel extends CI_Model{
+class resume_model extends CI_Model{
 
 	function __construct()
 	{

@@ -8,7 +8,7 @@ class AuthController extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('AuthModel');
+        $this->load->model('auth_model');
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->library('session');
@@ -34,11 +34,11 @@ class AuthController extends CI_Controller {
                 'username' => $this->input->post('email'),
                 'password' => $this->input->post('password')
             );
-            $result = $this->AuthModel->login($data);
+            $result = $this->auth_model->login($data);
             if ($result == TRUE) {
 
                 $username = $this->input->post('email');
-                $result = $this->AuthModel->read_user_information($username);
+                $result = $this->auth_model->read_user_information($username);
                 // print_r($result);
                 if ($result != false) {
                     $session_data = array(
@@ -47,14 +47,14 @@ class AuthController extends CI_Controller {
                     );
 
                     $this->session->set_userdata('logged_in', $session_data);
-                    $this->load->view('admin_page');
+                    $this->load->view('admin_panel');
                 }
             } else {
                 $data = array(
                     'error_message' => 'Invalid Username or Password'
                 );
                 $this->load->view('login', $data);
-              //print_r($data);
+                //print_r($data);
             }
         }
     }
@@ -66,8 +66,19 @@ class AuthController extends CI_Controller {
     public function RegisterUser() {
         echo $data['Email'] = $this->input->post('email');
         echo $data['Password'] = sha1($this->input->post('password'));
-        $result = $this->AuthModel->register_user($data);
+        $result = $this->auth_model->register_user($data);
         redirect('AuthController/login');
+    }
+
+    public function Logout() {
+
+        $sess_array = array(
+            'username' => ''
+        );
+
+        $this->session->unset_userdata('logged_in', $sess_array);
+        $data['message_display'] = 'Successfully Logout';
+        $this->load->view('login', $data);
     }
 
 }

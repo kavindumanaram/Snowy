@@ -88,6 +88,14 @@
                                             </div>
                                             <?php }
                                         ?>
+                                        <?php if (isset($message_display)) {
+                                            ?>
+                                            <div class="alert alert-warning alert-dismissable">
+                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+                                                <b><?php echo $message_display; ?></b>
+                                            </div>
+                                            <?php }
+                                        ?>
                                         <div class="form-group is-empty">
                                             <div class="input-icon">
                                                 <i class="ti-user"></i>
