@@ -73,22 +73,31 @@
 
                             <div id="cd-login" class="is-selected">
                                 <div class="page-login-form">
-                                    <form role="form" class="login-form">
-                                         <a href="<?php echo base_url();?>index.php/AuthController/register">
-                                        <div class="alert alert-info alert-dismissable">
-                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
-                                            <b>Want to be a member? | Register Now! </b>
-                                        </div></a>
+                                    <form role="form" class="login-form" action="<?php echo base_url(); ?>index.php/AuthController/userLoginProcess" method="post">
+                                        <a href="<?php echo base_url(); ?>index.php/AuthController/register">
+                                            <div class="alert alert-info alert-dismissable">
+                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+                                                <b>Want to be a member? | Register Now! </b>
+                                            </div>
+                                        </a>
+                                        <?php if (isset($error_message)) {
+                                            ?>
+                                            <div class="alert alert-danger alert-dismissable">
+                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+                                                <b><?php echo $error_message; ?></b>
+                                            </div>
+                                            <?php }
+                                        ?>
                                         <div class="form-group is-empty">
                                             <div class="input-icon">
                                                 <i class="ti-user"></i>
-                                                <input type="email" id="sender-email" class="form-control" name="email" placeholder="Username">
+                                                <input type="email" id="sender-email" class="form-control" name="email" placeholder="Username" required="required">
                                             </div>
                                             <span class="material-input"></span></div>
                                         <div class="form-group is-empty">
                                             <div class="input-icon">
                                                 <i class="ti-lock"></i>
-                                                <input type="password" class="form-control" placeholder="Password">
+                                                <input type="password" class="form-control" placeholder="Password" required="required" name="password" id="password">
                                             </div>
                                             <span class="material-input"></span></div>
                                         <button class="btn btn-common log-btn">Login</button>
