@@ -7,7 +7,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <meta name="author" content="Jobboard">
 
-        <title>JobBoard - Bootstrap HTML5 Job Portal Template</title>    
+        <title>JobBoard - Bootstrap HTML5 Job Portal Templats</title>    
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.png">
