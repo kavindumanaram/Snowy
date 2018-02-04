@@ -9,7 +9,8 @@ class resume_model extends CI_Model{
 
 		public function insert_resume($data)
 	{
-		return $this->db->insert('resume', $data);
+		$query = $this->db->insert('resume', $data);
+                return $query->result();
 	}
 
 	public function get_all_rresumes()

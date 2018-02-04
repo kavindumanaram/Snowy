@@ -33,3 +33,33 @@ CREATE TABLE `snowydatabase`.`user` ( `UserId` INT NOT NULL AUTO_INCREMENT , `Em
 ALTER TABLE `user` CHANGE `Email` `Email` VARCHAR(30) NOT NULL;
 
 ALTER TABLE `user` ADD UNIQUE(`Email`);
+
+
+--------------------------------------------------------------------------------
+-- Creating Job table
+--------------------------------------------------------------------------------
+CREATE TABLE `snowydatabase`.`job` ( `JobId` INT NOT NULL AUTO_INCREMENT , `Title` VARCHAR(30) NOT NULL , `CompanyName` VARCHAR(30) NOT NULL , `CompanyAddress` VARCHAR(50) NOT NULL , `Discription` TEXT NOT NULL , `ApplicationUrlEmail` VARCHAR(30) NOT NULL , `ClosingDate` DATE NOT NULL , `TimeStatus` VARCHAR(20) NOT NULL , `UserId` INT NOT NULL , PRIMARY KEY (`JobId`)) ENGINE = InnoDB;
+
+ALTER TABLE `job` ADD `JobTags` VARCHAR(50) NOT NULL AFTER `TimeStatus`;
+
+ALTER TABLE `job` ADD `CompanyWebsite` VARCHAR(30) NOT NULL AFTER `JobTags`, ADD `Attachments` VARCHAR(20) NOT NULL AFTER `CompanyWebsite`;
+
+ALTER TABLE `job` ADD `Location` VARCHAR(20) NOT NULL AFTER `Title`;
+
+ALTER TABLE `job` ADD `Category` INT NOT NULL AFTER `Location`;
+
+ALTER TABLE `job` CHANGE `ApplicationUrlEmail` `ApplicationUrlEmail` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL, CHANGE `CompanyWebsite` `CompanyWebsite` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
+--------------------------------------------------------------------------------
+-- Creating job categories table
+--------------------------------------------------------------------------------
+CREATE TABLE `snowydatabase`.`job_categories` ( `JobCategoryId` INT NOT NULL AUTO_INCREMENT , `JobCategoryName` VARCHAR(50) NOT NULL , `Description` TEXT NOT NULL , PRIMARY KEY (`JobCategoryId`)) ENGINE = InnoDB;
+
+INSERT INTO `job_categories`( `JobCategoryName`) VALUES ('Finance'),('IT'),('Education/Training'),('Art/Design'), ('Engineering'), ('Sale/Markting'), ('Healthcare'), ('Science'), ('Food Service');
+
+--------------------------------------------------------------------------------
+ALTER TABLE `job` CHANGE `Title` `Title` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
+ALTER TABLE `job` ADD `JobStatus` VARCHAR(10) NOT NULL AFTER `Attachments`;
+
+

@@ -11,9 +11,10 @@
                                 <ul class="lest item">
                                     <li><a href="manage-applications.html">Manage Applications</a></li>
                                     <li><a href="job-alerts.html">Job Alerts</a></li>
+                                    <li><a href="<?php echo base_url(); ?>index.php/JobController/job_categories">Manage Job Categories</a></li>
                                 </ul>
                                 <ul class="lest">
-                                    <li><a href="change-password.html">Change Password</a></li>
+                                    <li><a href="<?php echo base_url(); ?>index.php/AuthController/change_password">Change Password</a></li>
                                     <li><a href="<?php echo base_url(); ?>index.php/AuthController/Logout">Sing Out</a></li>
                                 </ul>
                             </div>

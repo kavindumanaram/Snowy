@@ -17,7 +17,7 @@
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav">
                             <li>
-                                <a class="active" href="index.html">
+                                <a class="active" href="<?php echo base_url(); ?>index.php/AuthController/index">
                                     Home</i>
                                 </a>
                             </li>
@@ -129,7 +129,7 @@
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right float-right">
-                            <li class="left"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>
+                            <li class="left"><a href="<?php echo base_url(); ?>index.php/JobController/post_job"><i class="ti-pencil-alt"></i> Post A Job</a></li>
                             <li class="right"><a href="<?php echo base_url(); ?>index.php/AuthController/Login"><i class="ti-lock"></i>  Sign In </a></li>
                         </ul>
                     </div>
@@ -137,7 +137,7 @@
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a href="index.html">Home</a>                       
+                        <a href="<?php echo base_url(); ?>index.php/AuthController/index">Home</a>                       
                     </li>
                     <li>
                         <a href="about.html">Pages</a>
@@ -180,12 +180,11 @@
                             <li><a href="single-post.html">Blog Single Post</a></li>
                         </ul>
                     </li>  
-                    <li class="btn-m"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>
-                    <li class="btn-m"><a  class="active" href="my-account.html"><i class="ti-lock"></i>  Log In</a></li>          
+                    <li class="btn-m"><a href="<?php echo base_url(); ?>index.php/JobController/post_job"><i class="ti-pencil-alt"></i> Post A Job</a></li>
+                    <li class="btn-m"><a  class="active" href="<?php echo base_url(); ?>index.php/AuthController/Login"><i class="ti-lock"></i>  Sign In</a></li>          
                 </ul>
                 <!-- Mobile Menu End --> 
             </nav>
-            =
         </div>
     </div>
 </html>

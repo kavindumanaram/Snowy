@@ -80,5 +80,14 @@ class AuthController extends CI_Controller {
         $data['message_display'] = 'Successfully Logout';
         $this->load->view('login', $data);
     }
+    
+    public function change_password()
+    {
+        $this->load->view('change_password');
+    }
+    
+    public function index() {
+        $this->load->view('index');
+    }
 
 }
