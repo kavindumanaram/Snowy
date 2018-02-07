@@ -74,7 +74,7 @@
                                 </a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a href="browse-jobs.html">
+                                        <a href="<?php echo base_url(); ?>index.php/JobController/browse_jobs">
                                             Browse Jobs
                                         </a>
                                     </li>
@@ -155,7 +155,7 @@
               <li>
                 <a href="#">For Candidates</a>
                 <ul>
-                  <li><a href="browse-jobs.html">Browse Jobs</a></li>
+                  <li><a href="<?php echo base_url(); ?>index.php/JobController/browse_jobs">Browse Jobs</a></li>
                   <li><a href="browse-categories.html">Browse Categories</a></li>
                   <li><a href="<?php echo base_url();?>/resume/add_resume">Add Resume</a></li>
                   <li><a href="manage-resumes.html">Manage Resumes</a></li>
@@ -165,13 +165,13 @@
               <li>
                 <a href="#">For Employers</a>
                 <ul>
-                  <li><a href="post-job.html">Add Job</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/jobController/post_job">Add Job</a></li>
                   <li><a href="manage-jobs.html">Manage Jobs</a></li>
                   <li><a href="manage-applications.html">Manage Applications</a></li>
-                  <li><a href="<?php echo base_url();?>index.php/ResumeController/browse">">Browse Resumes</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/ResumeController/browse">Browse Resumes</a></li>
                 </ul>
               </li> 
-              <li class="btn-m"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>
+              <li class="btn-m"><a href="<?php echo base_url();?>index.php/jobController/post_job"><i class="ti-pencil-alt"></i> Post A Job</a></li>
               <li class="btn-m"><a href="my-account.html"><i class="ti-lock"></i>  Log In</a></li>          
             </ul>
             <!-- Mobile Menu End --> 

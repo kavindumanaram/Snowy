@@ -11,11 +11,15 @@ class JobController extends CI_Controller {
     }
 
     public function browse_jobs() {
-        $data['jobs'] = $this->job_model->get_all_jobs();
+        
+        $search_text = $this->input->get('search_text');
+        $search_field = $this->input->get('search_field');
+        
+        $data['jobs'] = $this->job_model->get_all_jobs($search_text, $search_field);
         $data['job_categories'] = $this->job_model->get_all_jobs_group_by('JobCategoryName');
         $data['job_locations'] = $this->job_model->get_all_jobs_group_by('Location');
         $data['job_status'] = $this->job_model->get_all_jobs_group_by('JobStatus');
-       $this->load->view('browse_jobs', $data);
+        $this->load->view('browse_jobs', $data);
     }
 
     public function post_job() {

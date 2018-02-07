@@ -89,5 +89,10 @@ class AuthController extends CI_Controller {
     public function index() {
         $this->load->view('index');
     }
+    
+    public function get_all_users()
+    {
+        $this->load->view('index');
+    }
 
 }
