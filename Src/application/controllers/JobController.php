@@ -8,14 +8,39 @@ class JobController extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('job_model');
+        $this->load->library('pagination');
     }
 
     public function browse_jobs() {
-        
+        $config = array();
+        $config["base_url"] = base_url() . "index.php/JobController/browse_jobs";
+        $total_row = $this->job_model->record_count();
+        $config["total_rows"] = $total_row;
+        $config["per_page"] = 5;
+        $config['use_page_numbers'] = TRUE;
+        $config['num_links'] = $total_row;
+        $config['cur_tag_open'] = '&nbsp;<a class="btn btn-common">';
+        $config['cur_tag_close'] = '</a>';
+        $config['next_link'] = 'Next';
+        $config['prev_link'] = 'Previous';
+
+        $this->pagination->initialize($config);
+
+        if ($this->uri->segment(3)) {
+            $page = max(0, ( $this->uri->segment(3) - 1 ) * $config["per_page"]);
+        } else {
+            $page = 0;
+        }
+
+        $str_links = $this->pagination->create_links();
+        $data["links"] = explode('&nbsp;', $str_links);
+
         $search_text = $this->input->get('search_text');
         $search_field = $this->input->get('search_field');
-        
-        $data['jobs'] = $this->job_model->get_all_jobs($search_text, $search_field);
+
+        $data['jobs'] = $this->job_model->get_all_jobs($config["per_page"], $page, $search_text, $search_field);
+        // $data["results"] = $this->job_model->get_all_jobs();
+
         $data['job_categories'] = $this->job_model->get_all_jobs_group_by('JobCategoryName');
         $data['job_locations'] = $this->job_model->get_all_jobs_group_by('Location');
         $data['job_status'] = $this->job_model->get_all_jobs_group_by('JobStatus');
@@ -43,14 +68,12 @@ class JobController extends CI_Controller {
         $this->job_model->insert_job($data);
         $this->load->view('browse_jobs');
     }
-    
-    public function job_categories()
-    {
+
+    public function job_categories() {
         $this->load->view('job_categories');
     }
-    
-    public function save_job_categories()
-    {
+
+    public function save_job_categories() {
         $data['Description'] = $this->input->post('description');
         $data['JobCategoryName	'] = $this->input->post('name');
         $result = $this->job_model->insert_job_categories($data);

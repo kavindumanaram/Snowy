@@ -100,13 +100,11 @@
                         <?php } ?>
                         <!-- Start Pagination -->
                         <ul class="pagination">              
-                            <li class="active"><a href="#" class="btn btn-common" ><i class="ti-angle-left"></i> prev</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li class="active"><a href="#" class="btn btn-common">Next <i class="ti-angle-right"></i></a></li>
+                            <?php
+                            foreach ($links as $link) {
+                                echo "<li>" . $link . "</li>";
+                            }
+                            ?>
                         </ul>
                         <!-- End Pagination -->
                     </div>
@@ -129,31 +127,31 @@
                                 <div class="inner-box">
                                     <h3>Categories</h3>
                                     <ul class="cat-list">
-                                        <?php foreach ($job_categories as $job_category) { ?>
+<?php foreach ($job_categories as $job_category) { ?>
                                             <li>
-                                                <a href="<?php echo base_url();?>index.php/JobController/browse_jobs?search_text=<?php echo $job_category->JobCategoryId; ?>&search_field=job.Category"> <?php echo $job_category->JobCategoryName ?> <span class="num-posts"> <?php echo $job_category->jobCount ?> Jobs</span></a>                    
+                                                <a href="<?php echo base_url(); ?>index.php/JobController/browse_jobs?search_text=<?php echo $job_category->JobCategoryId; ?>&search_field=job.Category"> <?php echo $job_category->JobCategoryName ?> <span class="num-posts"> <?php echo $job_category->jobCount ?> Jobs</span></a>                    
                                             </li>
-                                        <?php } ?>
+<?php } ?>
                                     </ul>
                                 </div>
                                 <div class="inner-box">
                                     <h3>Job Status</h3>
                                     <ul class="cat-list">
-                                        <?php foreach ($job_status as $job_status) { ?>
+<?php foreach ($job_status as $job_status) { ?>
                                             <li>
-                                                <a href="<?php echo base_url();?>index.php/JobController/browse_jobs?search_text=<?php echo $job_status->JobStatus; ?>&search_field=job.JobStatus"><?php echo $job_status->JobStatus ?> <span class="num-posts"> <?php echo $job_status->jobCount ?> Jobs</span></a>                    
+                                                <a href="<?php echo base_url(); ?>index.php/JobController/browse_jobs?search_text=<?php echo $job_status->JobStatus; ?>&search_field=job.JobStatus"><?php echo $job_status->JobStatus ?> <span class="num-posts"> <?php echo $job_status->jobCount ?> Jobs</span></a>                    
                                             </li>
-                                        <?php } ?>
+<?php } ?>
                                     </ul>
                                 </div>
                                 <div class="inner-box">
                                     <h3>Locations</h3>
                                     <ul class="cat-list">
-                                        <?php foreach ($job_locations as $job_location) { ?>
+<?php foreach ($job_locations as $job_location) { ?>
                                             <li>
-                                                <a href="<?php echo base_url();?>index.php/JobController/browse_jobs?search_text=<?php echo $job_location->Location; ?>&search_field=job.Location"><?php echo $job_location->Location; ?><span class="num-posts"> <?php echo $job_location->jobCount ?> Jobs</span></a>                    
+                                                <a href="<?php echo base_url(); ?>index.php/JobController/browse_jobs?search_text=<?php echo $job_location->Location; ?>&search_field=job.Location"><?php echo $job_location->Location; ?><span class="num-posts"> <?php echo $job_location->jobCount ?> Jobs</span></a>                    
                                             </li>
-                                        <?php } ?>
+<?php } ?>
                                     </ul>
                                 </div>
                             </div>
@@ -165,7 +163,7 @@
         <!-- Job Browse Section End --> 
 
         <!-- Footer Section Start -->
-        <?php require_once("common/footer.php") ?>
+<?php require_once("common/footer.php") ?>
         <!-- Footer Section End -->  
 
         <!-- Go To Top Link -->

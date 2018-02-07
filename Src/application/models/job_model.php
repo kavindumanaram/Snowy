@@ -24,11 +24,12 @@ class job_model extends CI_Model {
         return $query->result();
     }
     
-    public function get_all_jobs($search_text, $search_field)
+    public function get_all_jobs($limit, $start, $search_text, $search_field)
     {
     $this->db->select('job.*,job_categories.*');
     $this->db->from('job');
     $this->db->join('job_categories', 'job.Category = job_categories.JobCategoryId', 'inner'); 
+     $this->db->limit($limit, $start);
     if ($search_text != '' && $search_field == '')
     {
         $this->db->or_like(array('job.Title' => $search_text, 'job.Location' => $search_text, 'job_categories.JobCategoryName' => $search_text));
@@ -37,6 +38,7 @@ class job_model extends CI_Model {
     {
         $this->db->or_like(array($search_field => $search_text));
     }
+    $this->db->order_by("JobId","ASC");
     $query = $this->db->get();
     return $query->result();  
     }
@@ -50,6 +52,10 @@ class job_model extends CI_Model {
     $query = $this->db->get();
     return $query->result();  
     }
+    
+    public function record_count() {
+return $this->db->count_all("job");
+}
 
 }
 ?>
