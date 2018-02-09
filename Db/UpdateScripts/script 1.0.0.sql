@@ -1,12 +1,12 @@
 CREATE DATABASE snowyDatabase;
---------------------------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------
 --  Crate table resume
 --------------------------------------------------------------------------------------------------------
 CREATE TABLE `snowydatabase`.`resume` ( `Id` INT NOT NULL AUTO_INCREMENT , `Name` VARCHAR(50) NOT NULL , `Nic` INT(10) NOT NULL , `Title` VARCHAR(5) NOT NULL , `Gender` INT(1) NOT NULL , `Email` VARCHAR(30) NOT NULL , `Mobile` VARCHAR(15) NOT NULL , `ProfessionId` INT NOT NULL , `Location` VARCHAR(30) NOT NULL , `SalaryExpec` DOUBLE NOT NULL , `CurrentDesignation` VARCHAR(30) NOT NULL , `ExperienceYears` INT NOT NULL , `Description` VARCHAR(100) NOT NULL , `HighestQualificationId` INT NOT NULL , PRIMARY KEY (`Id`)) ENGINE = InnoDB;
 
--------------------------------------------------------------------------------
+-- -----------------------------------------------------------------------------
 -- update the resume table
--------------------------------------------------------------------------------
+-- -----------------------------------------------------------------------------
 ALTER TABLE `resume` CHANGE `Location` `CurrentResidence` VARCHAR(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
 
 ALTER TABLE `resume` ADD `HomePhone` VARCHAR(15) NOT NULL AFTER `Mobile`;
@@ -25,9 +25,9 @@ ALTER TABLE `resume` CHANGE `skill` `Skills` VARCHAR(30) CHARACTER SET latin1 CO
 
 ALTER TABLE `resume` ADD `Password` VARCHAR(50) NOT NULL AFTER `Photo`;
 
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 -- Create User table
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 CREATE TABLE `snowydatabase`.`user` ( `UserId` INT NOT NULL AUTO_INCREMENT , `Email` INT(30) NOT NULL , `Password` VARCHAR(50) NOT NULL , `Created` TIMESTAMP NOT NULL , PRIMARY KEY (`UserId`)) ENGINE = InnoDB;
 
 ALTER TABLE `user` CHANGE `Email` `Email` VARCHAR(30) NOT NULL;
@@ -35,9 +35,9 @@ ALTER TABLE `user` CHANGE `Email` `Email` VARCHAR(30) NOT NULL;
 ALTER TABLE `user` ADD UNIQUE(`Email`);
 
 
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 -- Creating Job table
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 CREATE TABLE `snowydatabase`.`job` ( `JobId` INT NOT NULL AUTO_INCREMENT , `Title` VARCHAR(30) NOT NULL , `CompanyName` VARCHAR(30) NOT NULL , `CompanyAddress` VARCHAR(50) NOT NULL , `Discription` TEXT NOT NULL , `ApplicationUrlEmail` VARCHAR(30) NOT NULL , `ClosingDate` DATE NOT NULL , `TimeStatus` VARCHAR(20) NOT NULL , `UserId` INT NOT NULL , PRIMARY KEY (`JobId`)) ENGINE = InnoDB;
 
 ALTER TABLE `job` ADD `JobTags` VARCHAR(50) NOT NULL AFTER `TimeStatus`;
@@ -50,14 +50,13 @@ ALTER TABLE `job` ADD `Category` INT NOT NULL AFTER `Location`;
 
 ALTER TABLE `job` CHANGE `ApplicationUrlEmail` `ApplicationUrlEmail` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL, CHANGE `CompanyWebsite` `CompanyWebsite` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
 
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 -- Creating job categories table
---------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------
 CREATE TABLE `snowydatabase`.`job_categories` ( `JobCategoryId` INT NOT NULL AUTO_INCREMENT , `JobCategoryName` VARCHAR(50) NOT NULL , `Description` TEXT NOT NULL , PRIMARY KEY (`JobCategoryId`)) ENGINE = InnoDB;
 
 INSERT INTO `job_categories`( `JobCategoryName`) VALUES ('Finance'),('IT'),('Education/Training'),('Art/Design'), ('Engineering'), ('Sale/Markting'), ('Healthcare'), ('Science'), ('Food Service');
 
---------------------------------------------------------------------------------
 ALTER TABLE `job` CHANGE `Title` `Title` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
 
 ALTER TABLE `job` ADD `JobStatus` VARCHAR(10) NOT NULL AFTER `Attachments`;

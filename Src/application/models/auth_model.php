@@ -30,7 +30,6 @@ class auth_model extends CI_Model {
 
 // Read data from database to show data in admin page
     public function read_user_information($username) {
-
         $condition = "email =" . "'" . $username . "'";
         $this->db->select('*');
         $this->db->from('user');
@@ -44,7 +43,27 @@ class auth_model extends CI_Model {
             return false;
         }
     }
-
+    
+    public function get_users()
+    {
+        $this->db->select('*,user.Email as userEmail');
+        $this->db->select('user.*,resume.*');
+        $this->db->from('user');
+        $this->db->join('resume', 'user.Email = resume.Email', 'left');
+        $this->db->group_by('UserId');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function delete_user($email)
+    {
+        
+        $this->db->where('user.Email', $email);
+        $this->db->delete('user');
+        $this->db->where('resume.Email', $email);
+        $this->db->delete('resume');
+        return true;
+    }
 }
 
 ?>
