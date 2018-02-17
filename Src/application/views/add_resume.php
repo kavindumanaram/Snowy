@@ -168,7 +168,7 @@
                                 </div>
                                 <div class="form-group is-empty">
                                     <label class="control-label" for="textarea">Apply Position</label>
-                                    <input type="text" class="form-control" placeholder="Headline (e.g. Front-end developer)" readonly="readonly" name="apply_position" id="apply_position">
+                                    <input type="text" class="form-control" placeholder="Headline (e.g. Front-end developer)" readonly="readonly" name="apply_position" id="apply_position" value="SE">
                                     <span class="material-input"></span>
                                 </div>
                                 <div class="form-group is-empty">

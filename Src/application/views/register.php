@@ -92,7 +92,7 @@
                                         <div class="form-group is-empty">
                                             <div class="input-icon">
                                                 <i class="ti-lock"></i>
-                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required="required">
+                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="required">
                                             </div>
                                             <span class="material-input"></span></div>
                                         <div class="form-group is-empty">
@@ -156,21 +156,25 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/contact-form-script.js"></script>    
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.themepunch.revolution.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.themepunch.tools.min.js"></script>
-        
+
         <script>
-        var password = document.getElementById("password")
-  , confirm_password = document.getElementById("confirm_password");
+            var password = document.getElementById("password")
+                    , confirm_password = document.getElementById("confirm_password");
 
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
+            function validatePassword() {
+                if (password.value != confirm_password.value) {
+                    confirm_password.setCustomValidity("Passwords Don't Match");
+                } 
+                else if(){
+                    
+                }
+                else {
+                    confirm_password.setCustomValidity('');
+                }
+            }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+            password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
         </script>
 
     </body>

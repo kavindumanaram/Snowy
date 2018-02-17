@@ -47,14 +47,13 @@ class AuthController extends CI_Controller {
                     );
 
                     $this->session->set_userdata('logged_in', $session_data);
-                    $this->load->view('admin_panel');
+                    redirect('AdminPanelController/index');
                 }
             } else {
                 $data = array(
                     'error_message' => 'Invalid Username or Password'
                 );
                 $this->load->view('login', $data);
-                //print_r($data);
             }
         }
     }
@@ -64,9 +63,12 @@ class AuthController extends CI_Controller {
     }
 
     public function RegisterUser() {
-        echo $data['Email'] = $this->input->post('email');
-        echo $data['Password'] = sha1($this->input->post('password'));
+         $email = $data['Email'] = $this->input->post('email');
+         $data['Password'] = sha1($this->input->post('password'));
         $result = $this->auth_model->register_user($data);
+        //saving image
+        $content = file_get_contents('https://ui-avatars.com/api/?name='.$email.'&background=FF4F57&color=ffff&rounded=true&size=128');
+        file_put_contents('./assets/uploads/profile_pic/'.$email.'.png', $content);
         redirect('AuthController/login');
     }
 

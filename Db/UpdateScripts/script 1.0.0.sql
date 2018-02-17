@@ -61,4 +61,8 @@ ALTER TABLE `job` CHANGE `Title` `Title` VARCHAR(100) CHARACTER SET latin1 COLLA
 
 ALTER TABLE `job` ADD `JobStatus` VARCHAR(10) NOT NULL AFTER `Attachments`;
 
+ALTER TABLE `resume` CHANGE `ExperienceYears` `ExperienceYears` VARCHAR(20) NOT NULL;
+
+ALTER TABLE `resume` ADD `QulificationDetails` VARCHAR(50) NOT NULL AFTER `HighestQualificationTitle`;
+
 

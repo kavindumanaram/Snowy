@@ -69,16 +69,18 @@
 <!-- Side Menu Start --> 
 <?php require_once("common/side_menu.php") ?>
 <!-- Side Menu End --> 
+<?php foreach ($records as $record) { ?>
                     <div class="col-md-8 col-sm-8 col-xs-12">
                         <div class="inner-box my-resume">
                             <div class="author-resume">
                                 <div class="thumb">
-                                    <img src="<?php echo base_url(); ?>assets/img/resume/img-1.jpg" alt="">
+                                    <img src="<?php echo base_url(); ?>assets/uploads/profile_pic/<?php echo $record->Email; ?>.png" alt="">
                                 </div>
                                 <div class="author-info">
-                                    <h3>Mark Anderson</h3>
-                                    <p class="sub-title">UI/UX Designer</p>
-                                    <p><span class="address"><i class="ti-location-pin"></i>Mahattan, NYC, USA</span> <span><i class="ti-phone"></i>(+01) 211-123-5678</span></p>
+                                    <h3><?php echo $record->Title; ?>. <?php echo $record->Name; ?></h3>
+                                    <p class="sub-title"><?php echo $record->ApplyPosition; ?></p>
+                                    <p><span class="address"><i class="ti-location-pin"></i><?php echo $record->CurrentResidence; ?>, LK</span></p>
+                                    <p><span><i class="ti-phone"></i><?php echo $record->Mobile; ?> / <?php echo $record->HomePhone; ?></span></p>
                                     <div class="social-link">
                                         <a class="twitter" target="_blank" data-original-title="twitter" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a>
                                         <a class="facebook" target="_blank" data-original-title="facebook" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a>
@@ -88,35 +90,55 @@
                                 </div>
                             </div>
                             <div class="about-me item">
-                                <h3>About Me <i class="ti-pencil"></i></h3>
-                                <p>Nullam semper erat arcu, ac tincidunt sem venenatis vel. Curabitur a dolor ac ligula fermentum eusmod ac ullamcorper nulla. Integer blandit uitricies aliquam. Pellentesque quis dui varius, dapibus vilit id, ipsum. Morbi ac eros feugiat, lacinia elit ut, elementum turpis. Curabitur justo sapien, tempus sit amet ruturm eu, commodo eu lacus. Morbi in ligula nibh. Maecenas ut mi at odio hendririt eleif end tempor vitae augue. Fusce eget arcu et nibh dapibus maximus consectetur in est. Sed iaculis Luctus nibh sed veneatis. </p>
+                                <h3>NIC <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->	Nic; ?></p>
                             </div>
-                            <div class="work-experence item">
-                                <h3>Work Experience <i class="ti-pencil"></i></h3>
-                                <h4>UI/UX Designer</h4>
-                                <h5>Bannana INC.</h5>
-                                <span class="date">Fab 2017-Present(5year)</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero vero, dolores, officia quibusdam architecto sapiente eos voluptas odit ab veniam porro quae possimus itaque, quas! Tempora sequi nobis, atque incidunt!</p>
-                                <p><a href="#">4 Projects</a></p>
-                                <br>
-                                <h4>UI Designer</h4>
-                                <h5>Whale Creative</h5>
-                                <span class="date">Fab 2017-Present(2year)</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero vero, dolores, officia quibusdam architecto sapiente eos voluptas odit ab veniam porro quae possimus itaque, quas! Tempora sequi nobis, atque incidunt!</p>
-                                <p><a href="#">4 Projects</a></p>
+                            <div class="about-me item">
+                                <h3>Gender <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->Gender; ?></p>
+                            </div>
+                            <div class="about-me item">
+                                <h3>Email <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->Email; ?></p>
+                            </div>
+                            <div class="about-me item">
+                                <h3>Marital Status <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->MaritalStatus; ?></p>
+                            </div>
+                            <div class="about-me item">
+                                <h3>Current Residence <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->CurrentResidence; ?></p>
+                            </div>
+                            <div class="about-me item">
+                                <h3>Current Residence <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->CurrentResidence; ?></p>
+                            </div>
+                            <div class="about-me item">
+                                <h3>Salary Expectation <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->SalaryExpec; ?></p>
+                            </div>
+                            <div class="about-me item">
+                                <h3>Current Designation <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->	CurrentDesignation; ?></p>
+                            </div>
+                            <div class="about-me item">
+                                <h3>Total years of Experiance <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->ExperienceYears; ?> Years</p>
+                            </div>
+                            <div class="about-me item">
+                                <h3>Highest Qualification <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->HighestQualificationTitle; ?></p>
+                            </div>
+                            <div class="about-me item">
+                                <h3>Specialized area <i class="ti-pencil"></i></h3>
+                                <p><?php echo $record->Skills; ?></p>
                             </div>
                             <div class="education item">
-                                <h3>Education <i class="ti-pencil"></i></h3>
-                                <h4>Massachusetts Institute Of Technology</h4>
-                                <p>Bachelor of Computer Science</p>
-                                <span class="date">2010-2014</span>
-                                <br>
-                                <h4>Massachusetts Institute Of Technology</h4>
-                                <p>Bachelor of Computer Science</p>
-                                <span class="date">2010-2014</span>
+<!--iframe pdf here-->
                             </div>
                         </div>
                     </div>
+<?php } ?>
                 </div>
             </div>
         </div>
