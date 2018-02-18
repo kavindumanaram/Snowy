@@ -93,7 +93,11 @@ class AuthController extends CI_Controller {
     }
 
     public function index() {
-        $this->load->view('index');
+        
+        $data['job_count'] = $result = $this->auth_model->job_count();  
+        $data['user_count'] = $result = $this->auth_model->user_count();  
+        $data['resume_count'] = $result = $this->auth_model->resume_count();  
+        $this->load->view('index', $data);
     }
 
     public function user() {

@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "AuthController";
 $route['404_override'] = '';
 $route['upload'] = 'Upload';
 

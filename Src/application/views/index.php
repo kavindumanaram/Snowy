@@ -580,7 +580,7 @@ var TxtType = function(el, toRotate, period) {
               </div>
               <div class="desc">                
                 <h2>Jobs</h2>
-                <h1 class="counter">12050</h1>
+                <h1 class="counter"><?php echo $job_count ?></h1>
               </div>
             </div>
           </div>
@@ -591,7 +591,7 @@ var TxtType = function(el, toRotate, period) {
               </div>
               <div class="desc">
                 <h2>Members</h2>
-                <h1 class="counter">10890</h1>                
+                <h1 class="counter"><?php echo $user_count ?></h1></h1>                
               </div>
             </div>
           </div>
@@ -602,7 +602,7 @@ var TxtType = function(el, toRotate, period) {
               </div>
               <div class="desc">
                 <h2>Resume</h2>
-                <h1 class="counter">700</h1>                
+                <h1 class="counter"><?php echo $resume_count ?></h1></h1>                
               </div>
             </div>
           </div>

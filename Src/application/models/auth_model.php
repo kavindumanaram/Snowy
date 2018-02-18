@@ -65,6 +65,27 @@ class auth_model extends CI_Model {
         $this->db->delete('resume');
         return true;
     }
+    
+    public function record_count() 
+    {
+        return $this->db->count_all("job");
+    }
+    
+        
+    public function job_count()
+    {
+        return $this->db->count_all("job");
+    }
+    
+     public function user_count()
+    {
+        return $this->db->count_all("user");
+    }
+    
+      public function resume_count()
+    {
+        return $this->db->count_all("resume");
+    }
 }
 
 ?>
