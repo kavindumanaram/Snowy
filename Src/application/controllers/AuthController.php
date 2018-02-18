@@ -43,10 +43,13 @@ class AuthController extends CI_Controller {
                     $session_data = array(
                         'email' => $result[0]->Email,
                         'userId' => $result[0]->UserId,
+                        'user_level' => $result[0]->UserLevel,
+                        'user_id' => $result[0]->UserId
                     );
 
                     $this->session->set_userdata('logged_in', $session_data);
                     redirect('AdminPanelController/index');
+                    //$this->load->view('admin_panel');
                 }
             } else {
                 $data = array(
@@ -62,19 +65,16 @@ class AuthController extends CI_Controller {
     }
 
     public function RegisterUser() {
-         $email = $data['Email'] = $this->input->post('email');
-         $data['Password'] = sha1($this->input->post('password'));
-         $data['UserLevel'] = $this->input->post('user_level');
+        $email = $data['Email'] = $this->input->post('email');
+        $data['Password'] = sha1($this->input->post('password'));
+        $data['UserLevel'] = $this->input->post('user_level');
         $result = $this->auth_model->register_user($data);
         //saving image
-        if($result)
-        {
-        $content = file_get_contents('https://ui-avatars.com/api/?name='.$email.'&background=FF4F57&color=ffff&rounded=true&size=128');
-        file_put_contents('./assets/uploads/profile_pic/'.$email.'.png', $content);
-        redirect('AuthController/login');
+        if ($result) {
+            $content = file_get_contents('https://ui-avatars.com/api/?name=' . $email . '&background=FF4F57&color=ffff&rounded=true&size=128');
+            file_put_contents('./assets/uploads/profile_pic/' . $email . '.png', $content);
+            redirect('AuthController/login');
         }
-        
-
     }
 
     public function Logout() {
@@ -100,9 +100,8 @@ class AuthController extends CI_Controller {
         $data['records'] = $this->auth_model->get_users();
         $this->load->view('user', $data);
     }
-    
-    public function delete_user()
-    {
+
+    public function delete_user() {
         $email = $this->input->get('email');
         $this->auth_model->delete_user($email);
         redirect('authController/user');

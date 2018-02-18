@@ -67,4 +67,6 @@ ALTER TABLE `resume` ADD `QulificationDetails` VARCHAR(50) NOT NULL AFTER `Highe
 
 ALTER TABLE `user` ADD `UserLevel` VARCHAR(10) NOT NULL AFTER `Password`;
 
+ALTER TABLE `resume` ADD `UserId` INT NOT NULL AFTER `Photo`;
+
 

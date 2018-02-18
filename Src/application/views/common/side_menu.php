@@ -1,6 +1,13 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="right-sideabr">
                             <div class="inner-box">
+                                <ul class="lest item">
+                                    <div class="thumb">
+                                        <img src="<?php echo base_url(); ?>assets/uploads/profile_pic/<?php echo $this->session->userdata('logged_in')['email']; ?>.png" alt="" height="50px" width="50px">
+                                </div>
+                                    <li><?php echo $this->session->userdata('logged_in')['email']; ?> [ <?php echo $this->session->userdata('logged_in')['user_level']; ?> ]</li>
+
+                                </ul>
                                 <h4>Manage Account</h4>
                                 <ul class="lest item">
                                     <li><a class="active" href="resume.html">My Resume</a></li>

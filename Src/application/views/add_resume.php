@@ -58,7 +58,7 @@
         </div>
         <!-- Page Header End -->    
         <section class="section text-center" >
-            <div class="container text-left"">
+            <div class="container text-left">
                 <div class="row">
                     <div class="col-md-9 col-md-offset-2">
                         <div class="page-ads box">

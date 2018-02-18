@@ -9,6 +9,7 @@ class ResumeController extends CI_Controller {
         parent::__construct();
         $this->load->model('resume_model');
         $this->load->helper(array('form', 'url'));
+        $this->load->library('session');
     }
 
     public function index() {
@@ -81,7 +82,8 @@ class ResumeController extends CI_Controller {
     
     public function view_resume()
     {
-        $data['records'] = $this->resume_model->get_user_resume();
+        $user_id =  $this->session->userdata('logged_in')['user_id'];
+        $data['records'] = $this->resume_model->get_user_resume($user_id);
        $this->load->view('admin_panel', $data);
     }
     

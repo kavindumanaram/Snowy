@@ -31,9 +31,9 @@ class resume_model extends CI_Model{
 		return $query->result();
 	}
         
-        public function get_user_resume()
+        public function get_user_resume($user_id)
 	{
-            $condition = "Email = 'kavinduxyz@gmail.com'";
+            $condition = "UserId = $user_id";
                 $this->db->where($condition);
                 $query = $this->db->get('resume');
 		return $query->result();
