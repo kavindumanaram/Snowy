@@ -65,4 +65,6 @@ ALTER TABLE `resume` CHANGE `ExperienceYears` `ExperienceYears` VARCHAR(20) NOT 
 
 ALTER TABLE `resume` ADD `QulificationDetails` VARCHAR(50) NOT NULL AFTER `HighestQualificationTitle`;
 
+ALTER TABLE `user` ADD `UserLevel` VARCHAR(10) NOT NULL AFTER `Password`;
+
 

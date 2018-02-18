@@ -73,7 +73,12 @@
 
                             <div id="cd-signup" class="is-selected">
                                 <div class="page-login-form register">
-
+                                    <?php
+                            if (!empty($notification)) {
+                                echo '<p>Notifications : </p>'
+                                .     '<p>' . $notification . '</p>';
+                            }
+                            ?>
                                     <form role="form" class="login-form" method="post" action="<?php echo base_url(); ?>index.php/AuthController/RegisterUser">
                                         <fieldset>
                                             <label>Have an account?</label>
@@ -92,15 +97,26 @@
                                         <div class="form-group is-empty">
                                             <div class="input-icon">
                                                 <i class="ti-lock"></i>
-                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="required">
+                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password"  required="required">
                                             </div>
                                             <span class="material-input"></span></div>
-                                        <div class="form-group is-empty">
+                                        
+                                            <div class="form-group is-empty">
                                             <div class="input-icon">
                                                 <i class="ti-lock"></i>
                                                 <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password" required="required">
                                             </div>
-                                            <span class="material-input"></span></div>
+                                            <span class="material-input"></span>
+                                        </div>
+
+                                        <div class="form-group is-empty">
+                                            <select class="form-control" id="user_level" name="user_level" required="required" >
+                                                <option value="">None</option>
+                                                <option value="candidate">Register as Candidate</option>
+                                                <option value="employee">Register as Employee</option>
+                                            </select>
+                                            <span class="material-input"></span>
+                                        </div>
                                         <button class="btn btn-common log-btn">Register</button>
                                     </form>
                                 </div>
@@ -158,19 +174,23 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.themepunch.tools.min.js"></script>
 
         <script>
-            var password = document.getElementById("password")
-                    , confirm_password = document.getElementById("confirm_password");
-
-            function validatePassword() {
-                if (password.value != confirm_password.value) {
-                    confirm_password.setCustomValidity("Passwords Don't Match");
-                } 
-                else if(){
-                    
-                }
-                else {
-                    confirm_password.setCustomValidity('');
-                }
+            var password = document.getElementById("password");
+            var confirm_password = document.getElementById("confirm_password");
+            
+            function validatePassword() 
+            {
+            if (password.value != confirm_password.value) 
+            {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+            }
+            else if (password.value.length < 8)
+            {
+            confirm_password.setCustomValidity("Passwords Must Contain atlest 6 Characters");
+            }
+            else 
+            {
+            confirm_password.setCustomValidity('');
+            }
             }
 
             password.onchange = validatePassword;

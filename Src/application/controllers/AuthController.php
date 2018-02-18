@@ -39,7 +39,6 @@ class AuthController extends CI_Controller {
 
                 $username = $this->input->post('email');
                 $result = $this->auth_model->read_user_information($username);
-                // print_r($result);
                 if ($result != false) {
                     $session_data = array(
                         'email' => $result[0]->Email,
@@ -65,11 +64,17 @@ class AuthController extends CI_Controller {
     public function RegisterUser() {
          $email = $data['Email'] = $this->input->post('email');
          $data['Password'] = sha1($this->input->post('password'));
+         $data['UserLevel'] = $this->input->post('user_level');
         $result = $this->auth_model->register_user($data);
         //saving image
+        if($result)
+        {
         $content = file_get_contents('https://ui-avatars.com/api/?name='.$email.'&background=FF4F57&color=ffff&rounded=true&size=128');
         file_put_contents('./assets/uploads/profile_pic/'.$email.'.png', $content);
         redirect('AuthController/login');
+        }
+        
+
     }
 
     public function Logout() {
