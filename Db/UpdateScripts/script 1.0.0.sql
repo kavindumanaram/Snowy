@@ -69,4 +69,19 @@ ALTER TABLE `user` ADD `UserLevel` VARCHAR(10) NOT NULL AFTER `Password`;
 
 ALTER TABLE `resume` ADD `UserId` INT NOT NULL AFTER `Photo`;
 
+ALTER TABLE `job_categories` ADD `Image` VARCHAR(30) NOT NULL AFTER `Description`;
+
+-- ---------------------------------------------------------------------------------
+
+UPDATE `job_categories` SET `Image` = 'Finance.jpg' WHERE `job_categories`.`JobCategoryId` = 6;
+UPDATE `job_categories` SET `Image` = 'It.jpg' WHERE `job_categories`.`JobCategoryId` = 7;
+UPDATE `job_categories` SET `Image` = 'EducationTraining.jpg' WHERE `job_categories`.`JobCategoryId` = 8;
+UPDATE `job_categories` SET `Image` = 'ArtDesign.jpg' WHERE `job_categories`.`JobCategoryId` = 9;
+UPDATE `job_categories` SET `Image` = 'Engineering.jpg' WHERE `job_categories`.`JobCategoryId` = 10;
+UPDATE `job_categories` SET `Image` = 'SalesMarketing.jpg' WHERE `job_categories`.`JobCategoryId` = 11;
+UPDATE `job_categories` SET `Image` = 'Healthcare.jpg' WHERE `job_categories`.`JobCategoryId` = 12;
+UPDATE `job_categories` SET `Image` = 'Science.jpg' WHERE `job_categories`.`JobCategoryId` = 13;
+UPDATE `job_categories` SET `Image` = 'Food Service.jpg' WHERE `job_categories`.`JobCategoryId` = 14;
+
+-- ---------------------------------------------------------------------------------
 

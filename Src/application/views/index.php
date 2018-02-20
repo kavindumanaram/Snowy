@@ -310,82 +310,33 @@ var TxtType = function(el, toRotate, period) {
           Job Categories
         </h2>
         <div class="row">
+     
+             <?php foreach ($job_categories as $job_category) {?>
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="featured-item">
               <div class="featured-wrap">
                 <div class="featured-inner">
                   <figure class="item-thumb">
                     <a class="hover-effect" href="job-page.html">
-                      <img src="<?php echo base_url(); ?>assets/img/features/img-1.jpg" alt="">
+                        <img src="<?php echo base_url(); ?>assets/uploads/job_categories_imge/<?php echo $job_category->Image; ?>" alt="" width="342" height="216">
                     </a>
                   </figure>
                   <div class="item-body">
-                    <h3 class="job-title"><a href="job-page.html">Graphic Designer</a></h3>
-                    <div class="adderess"><i class="ti-location-pin"></i> Colombo | Matara</div>
+                    <h3 class="job-title"><a href="job-page.html"><?php echo $job_category->JobCategoryName; ?></a></h3>
+                    <div class="adderess"><i class="ti-location-pin"></i>Matara | Colombo</div>
                   </div>
                 </div>
               </div>
               <div class="item-foot">
                 <span><i class="ti-calendar"></i> 4 months ago</span>
-                <span><i class="ti-time"></i> Full Time | Part Time</span>
+                <span><i class="ti-time"></i> Full Time | Part Time </span>
                 <div class="view-iocn">
                   <a href="job-page.html"><i class="ti-arrow-right"></i></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="featured-item">
-              <div class="featured-wrap">
-                <div class="featured-inner">
-                  <figure class="item-thumb">
-                    <a class="hover-effect" href="job-page.html">
-                      <img src="<?php echo base_url(); ?>assets/img/features/img-2.jpg" alt="">
-                    </a>
-                  </figure>
-                  <div class="item-body">
-                    <h3 class="job-title"><a href="job-page.html">Software Engineer</a></h3>
-                    <div class="adderess"><i class="ti-location-pin"></i> Dehiwala | Kandy</div>
-                  </div>
-                </div>
-              </div>
-              <div class="item-foot">
-                <span><i class="ti-calendar"></i> 5 months ago</span>
-                <span><i class="ti-time"></i> INternship</span>
-                <div class="view-iocn">
-                  <a href="job-page.html"><i class="ti-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="featured-item">
-              <div class="featured-wrap">
-                <div class="featured-inner">
-                  <figure class="item-thumb">
-                    <a class="hover-effect" href="job-page.html">
-                      <img src="<?php echo base_url(); ?>assets/img/features/img-3.jpg" alt="">
-                    </a>
-                  </figure>
-                  <div class="item-body">
-                    <h3 class="job-title"><a href="job-page.html">Managing Director</a></h3>
-                    <div class="adderess"><i class="ti-location-pin"></i> NY, United States</div>
-                  </div>
-                </div>
-              </div>
-              <div class="item-foot">
-                <span><i class="ti-calendar"></i> 3 months ago</span>
-                <span><i class="ti-time"></i> Full Time</span>
-                <div class="view-iocn">
-                  <a href="job-page.html"><i class="ti-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <d
-
-          
-        </div>
+         <?php } ?>
       </div>
     </section>
     <!-- Featured Jobs Section End -->

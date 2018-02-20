@@ -9,7 +9,6 @@ class auth_model extends CI_Model {
 
     public function register_user($data) {
         return $this->db->insert('user', $data);
-        
     }
 
 // Read data using username and password
@@ -44,9 +43,8 @@ class auth_model extends CI_Model {
             return false;
         }
     }
-    
-    public function get_users()
-    {
+
+    public function get_users() {
         $this->db->select('*,user.Email as userEmail');
         $this->db->select('user.*,resume.*');
         $this->db->from('user');
@@ -55,37 +53,43 @@ class auth_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
-    
-    public function delete_user($email)
-    {
-        
+
+    public function delete_user($email) {
+
         $this->db->where('user.Email', $email);
         $this->db->delete('user');
         $this->db->where('resume.Email', $email);
         $this->db->delete('resume');
         return true;
     }
-    
-    public function record_count() 
-    {
+
+    public function record_count() {
         return $this->db->count_all("job");
     }
-    
-        
-    public function job_count()
-    {
+
+    public function job_count() {
         return $this->db->count_all("job");
     }
-    
-     public function user_count()
-    {
+
+    public function user_count() {
         return $this->db->count_all("user");
     }
-    
-      public function resume_count()
-    {
+
+    public function resume_count() {
         return $this->db->count_all("resume");
     }
+
+    public function get_random_job_categories($groupByParam) {
+        $condition = "job.category = job_categories.JobCategoryId";
+        $this->db->from('job,job_categories');
+        $this->db->where($condition);
+        $this->db->order_by('rand()');
+        $this->db->limit(3);
+        $this->db->group_by($groupByParam);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 }
 
 ?>
