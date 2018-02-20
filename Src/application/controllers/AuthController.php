@@ -105,8 +105,26 @@ class AuthController extends CI_Controller {
 //        );
 
         $data['job_categories'] = $this->auth_model->get_random_job_categories("JobCategoryId");
-
+       // $data['job_categories']['Location'] = 123;
+        
+        $job_category_locations = "";
+       foreach ($data['job_categories'] as $key => $value) {
+          // print_r();
+           $locations = $this->auth_model->get_job_categories_locations($value->Category);
+        //   print_r($locations);
+           foreach ($locations as $key1 => $value) {
+             //  print_r ($value->Location);  
+               $job_category_locations .=  " | ".$value->Location;
+               
+           }
+        
+        //   echo $job_category_locations."<br/>";
+           $data['job_categories'][$key]->Location = $job_category_locations;
+           $job_category_locations = "";
+       }
+    //   print_r(($this->auth_model->get_job_categories_locations(6)[0]->Location));
         $this->load->view('index', $data);
+      // print_r(());
     }
 
     public function user() {

@@ -180,7 +180,7 @@ var TxtType = function(el, toRotate, period) {
     <!-- Find Job Section Start -->
     <section class="find-job section">
       <div class="container">
-        <h2 class="section-title">Hot Jobs</h2>
+        <h2 class="section-title">Latest Jobs</h2>
         <div class="row">
           <div class="col-md-12">
             <div class="job-list">
@@ -323,7 +323,7 @@ var TxtType = function(el, toRotate, period) {
                   </figure>
                   <div class="item-body">
                     <h3 class="job-title"><a href="job-page.html"><?php echo $job_category->JobCategoryName; ?></a></h3>
-                    <div class="adderess"><i class="ti-location-pin"></i>Matara | Colombo</div>
+                    <div class="adderess"><i class="ti-location-pin"></i><?php echo $job_category->Location; ?></div>
                   </div>
                 </div>
               </div>
