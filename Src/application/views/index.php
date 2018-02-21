@@ -331,7 +331,7 @@ var TxtType = function(el, toRotate, period) {
                 <span><i class="ti-calendar"></i> <?php echo $job_category->Created; ?></span>
                 <span><i class="ti-time"></i> <?php echo $job_category->JobStatus; ?> </span>
                 <div class="view-iocn">
-                  <a href="job-page.html"><i class="ti-arrow-right"></i></a>
+                    <a href="<?php echo base_url() ?>/index.php/JobController/browse_jobs?search_text=<?php echo $job_category->Category; ?>&search_field=job.Category"><i class="ti-arrow-right"></i></a>
                 </div>
               </div>
             </div>
