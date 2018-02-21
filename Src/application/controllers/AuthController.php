@@ -102,8 +102,11 @@ class AuthController extends CI_Controller {
 
         $job_category_locations = "";
         $job_category_job_status = "";
+
         foreach ($data['job_categories'] as $key => $value) {
-            $locations = $this->auth_model->get_job_categories_filter($value->Category);
+            $category_id = $value->Category;
+            $locations = $this->auth_model->get_job_categories_filter($category_id);
+
             foreach ($locations as $key1 => $value) {
                 $job_category_locations .= $value->Location . " | ";
                 $job_category_job_status .= $value->JobStatus . " | ";
@@ -111,10 +114,11 @@ class AuthController extends CI_Controller {
 
             $data['job_categories'][$key]->Location = rtrim($job_category_locations, " | ");
             $data['job_categories'][$key]->JobStatus = rtrim($job_category_job_status, " | ");
+            $data['job_categories'][$key]->Created = $this->time_elapsed_string($this->auth_model->get_job_categories_latest_timestamp($category_id)[0]->Created);
+
             $job_category_locations = "";
             $job_category_job_status = "";
         }
-        
         $this->load->view('index', $data);
     }
 
@@ -127,6 +131,37 @@ class AuthController extends CI_Controller {
         $email = $this->input->get('email');
         $this->auth_model->delete_user($email);
         redirect('authController/user');
+    }
+
+    private function time_elapsed_string($datetime, $full = false) {
+        $now = new DateTime;
+        $ago = new DateTime($datetime);
+        $diff = $now->diff($ago);
+
+        $diff->w = floor($diff->d / 7);
+        $diff->d -= $diff->w * 7;
+
+        $string = array(
+            'y' => 'year',
+            'm' => 'month',
+            'w' => 'week',
+            'd' => 'day',
+            'h' => 'hour',
+            'i' => 'minute',
+            's' => 'second',
+        );
+        foreach ($string as $k => &$v) {
+            if ($diff->$k) {
+                $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+            } else {
+                unset($string[$k]);
+            }
+        }
+
+        if (!$full){
+            $string = array_slice($string, 0, 1);
+        }
+        return $string ? implode(', ', $string) . ' ago' : 'just now';
     }
 
 }

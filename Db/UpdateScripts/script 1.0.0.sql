@@ -85,3 +85,5 @@ UPDATE `job_categories` SET `Image` = 'Food Service.jpg' WHERE `job_categories`.
 
 -- ---------------------------------------------------------------------------------
 
+ALTER TABLE `job` ADD `Created` TIMESTAMP NOT NULL AFTER `UserId`;
+

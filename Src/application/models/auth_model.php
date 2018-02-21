@@ -102,6 +102,18 @@ class auth_model extends CI_Model {
         return $query->result();
     }
     
+        public function get_job_categories_latest_timestamp($jobCategoryid)
+    {
+        $condition = "job.category = $jobCategoryid";
+        $this->db->select("Created");
+        $this->db->from('job');
+        $this->db->where($condition);
+        $this->db->order_by("Created", "DESC");
+        $this->db->limit(1);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
     
 
 }
