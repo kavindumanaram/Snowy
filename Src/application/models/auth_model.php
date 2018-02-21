@@ -91,10 +91,10 @@ class auth_model extends CI_Model {
     }
     
     
-    public function get_job_categories_locations($jobCategoryid)
+    public function get_job_categories_filter($jobCategoryid)
     {
         $condition = "job.category = $jobCategoryid";
-        $this->db->select("Location");
+        $this->db->select("Location,JobStatus");
         $this->db->from('job');
         $this->db->where($condition);
         $this->db->group_by("Location");

@@ -93,38 +93,29 @@ class AuthController extends CI_Controller {
     }
 
     public function index() {
-        
-        $data['job_count']  = $this->auth_model->job_count();  
-        $data['user_count']  = $this->auth_model->user_count();  
-        $data['resume_count']  = $this->auth_model->resume_count();
-        //$data['resume_count'] = $result = $this->auth_model->resume_count();
-        
-//        $job_category_data = array(
-//            'common' => $this->auth_model->get_random_job_categories("JobCategoryId"),
-//            'location1' => $this->auth_model->get_random_job_categories("Title")
-//        );
 
+        $data['job_count'] = $this->auth_model->job_count();
+        $data['user_count'] = $this->auth_model->user_count();
+        $data['resume_count'] = $this->auth_model->resume_count();
+        //$data['resume_count'] = $result = $this->auth_model->resume_count();
         $data['job_categories'] = $this->auth_model->get_random_job_categories("JobCategoryId");
-       // $data['job_categories']['Location'] = 123;
-        
+
         $job_category_locations = "";
-       foreach ($data['job_categories'] as $key => $value) {
-          // print_r();
-           $locations = $this->auth_model->get_job_categories_locations($value->Category);
-        //   print_r($locations);
-           foreach ($locations as $key1 => $value) {
-             //  print_r ($value->Location);  
-               $job_category_locations .=  " | ".$value->Location;
-               
-           }
+        $job_category_job_status = "";
+        foreach ($data['job_categories'] as $key => $value) {
+            $locations = $this->auth_model->get_job_categories_filter($value->Category);
+            foreach ($locations as $key1 => $value) {
+                $job_category_locations .= $value->Location . " | ";
+                $job_category_job_status .= $value->JobStatus . " | ";
+            }
+
+            $data['job_categories'][$key]->Location = rtrim($job_category_locations, " | ");
+            $data['job_categories'][$key]->JobStatus = rtrim($job_category_job_status, " | ");
+            $job_category_locations = "";
+            $job_category_job_status = "";
+        }
         
-        //   echo $job_category_locations."<br/>";
-           $data['job_categories'][$key]->Location = $job_category_locations;
-           $job_category_locations = "";
-       }
-    //   print_r(($this->auth_model->get_job_categories_locations(6)[0]->Location));
         $this->load->view('index', $data);
-      // print_r(());
     }
 
     public function user() {

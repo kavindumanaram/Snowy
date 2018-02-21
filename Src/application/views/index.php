@@ -329,7 +329,7 @@ var TxtType = function(el, toRotate, period) {
               </div>
               <div class="item-foot">
                 <span><i class="ti-calendar"></i> 4 months ago</span>
-                <span><i class="ti-time"></i> Full Time | Part Time </span>
+                <span><i class="ti-time"></i> <?php echo $job_category->JobStatus; ?> </span>
                 <div class="view-iocn">
                   <a href="job-page.html"><i class="ti-arrow-right"></i></a>
                 </div>
