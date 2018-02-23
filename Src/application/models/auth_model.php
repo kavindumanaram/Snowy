@@ -79,18 +79,20 @@ class auth_model extends CI_Model {
         return $this->db->count_all("resume");
     }
 
-    public function get_random_job_categories($groupByParam) {
+    public function get_job_categories($groupByParam, $randomEnabled) {
         $condition = "job.category = job_categories.JobCategoryId";
         $this->db->from('job,job_categories');
         $this->db->where($condition);
-        $this->db->order_by('rand()');
-        $this->db->limit(3);
+        if ($randomEnabled) {
+            $this->db->order_by('rand()');
+            $this->db->limit(3);
+        }
+        
         $this->db->group_by($groupByParam);
         $query = $this->db->get();
         return $query->result();
     }
-    
-    
+
     public function get_job_categories_filter($jobCategoryid)
     {
         $condition = "job.category = $jobCategoryid";
@@ -111,6 +113,13 @@ class auth_model extends CI_Model {
         $this->db->order_by("Created", "DESC");
         $this->db->limit(1);
         $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function popular_keywords() {
+        $this->db->order_by("Count", "DESC");
+        $this->db->limit(4);
+        $query = $this->db->get("popular_keyword");
         return $query->result();
     }
     

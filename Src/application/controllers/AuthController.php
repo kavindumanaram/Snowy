@@ -98,7 +98,10 @@ class AuthController extends CI_Controller {
         $data['user_count'] = $this->auth_model->user_count();
         $data['resume_count'] = $this->auth_model->resume_count();
         //$data['resume_count'] = $result = $this->auth_model->resume_count();
-        $data['job_categories'] = $this->auth_model->get_random_job_categories("JobCategoryId");
+        $data['job_categories'] = $this->auth_model->get_job_categories("JobCategoryId", TRUE);
+        $data['job_category_list'] = $this->auth_model->get_job_categories("JobCategoryId", FALSE);
+        
+        $data['popular_keywords'] = $this->auth_model->popular_keywords();
 
         $job_category_locations = "";
         $job_category_job_status = "";

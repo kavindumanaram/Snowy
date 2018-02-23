@@ -37,8 +37,18 @@ class JobController extends CI_Controller {
 
         $search_text = $this->input->get('search_text');
         $search_field = $this->input->get('search_field');
+        $search_from = $this->input->get('page');
+        $search_location = $this->input->get('location');
+        $search_job_category = $this->input->get('job_category');
+       // $location = $this->input->get('location');
 
-        $data['jobs'] = $this->job_model->get_all_jobs($config["per_page"], $page, $search_text, $search_field);
+        if($search_from){
+            $data['jobs'] = $this->job_model->get_all_jobs_with_filters($config["per_page"], $page, $search_text, $search_location, $search_job_category);
+        }
+        else{
+            $data['jobs'] = $this->job_model->get_all_jobs($config["per_page"], $page, $search_text, $search_field);
+        }
+        
         // $data["results"] = $this->job_model->get_all_jobs();
 
         $data['job_categories'] = $this->job_model->get_all_jobs_group_by('JobCategoryName');

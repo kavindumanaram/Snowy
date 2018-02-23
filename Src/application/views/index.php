@@ -126,48 +126,50 @@ var TxtType = function(el, toRotate, period) {
     <span class="wrap"></span>
   </a></h2>
               <div class="content">
-                <form method="" action="">
+                  <form method="GET" action="<?php echo base_url()?>/index.php/JobController/browse_jobs" >
                   <div class="row">
                     <div class="col-md-4 col-sm-6">
                       <div class="form-group">
-                        <input class="form-control" type="text" placeholder="job title / keywords / company name">
+                          <input class="form-control" type="text" placeholder="job title / keywords / company name" name="search_text" id="search_text">
                         <i class="ti-time"></i>
                       </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                      <div class="form-group">
-                        <input class="form-control" type="email" placeholder="city / province / zip code">
-                        <i class="ti-location-pin"></i>
+                                       <div class="col-md-3 col-sm-6">
+                      <div class="search-category-container">
+                        <label class="styled-select">
+                          <select class="dropdown-product selectpicker" name="location" id="location">
+                            <option value="">All Locations</option>
+                            <?php foreach ($job_category_list as $job_category) { ?>
+                                <option><?php echo $job_category->Location ?></option>
+                          <?php  }?>
+                          </select>
+                        </label>
                       </div>
                     </div>
+                      <input class="form-control" type="hidden" placeholder="city / province / zip code" value="index" name="page" id="page">
                     <div class="col-md-3 col-sm-6">
                       <div class="search-category-container">
                         <label class="styled-select">
-                          <select class="dropdown-product selectpicker">
-                            <option>All Categories</option>
-                            <option>Finance</option>
-                            <option>IT & Engineering</option>
-                            <option>Education/Training</option>
-                            <option>Art/Design</option>
-                            <option>Sale/Markting</option>
-                            <option>Healthcare</option>
-                            <option>Science</option>                              
-                            <option>Food Services</option>
+                          <select class="dropdown-product selectpicker" name="job_category" id="job_category">
+                            <option value="">All Categories</option>
+                            <?php foreach ($job_category_list as $job_category) { ?>
+                                <option><?php echo $job_category->JobCategoryName ?></option>
+                          <?php  }?>
                           </select>
                         </label>
                       </div>
                     </div>
                     <div class="col-md-1 col-sm-6">
-                      <button type="button" class="btn btn-search-icon"><i class="ti-search"></i></button>
+                      <button type="submit" class="btn btn-search-icon"><i class="ti-search"></i></button>
                     </div>
                   </div>
                 </form>
               </div>
               <div class="popular-jobs">
                 <b>Popular Keywords: </b>
-                <a href="#">Web Design</a>
-                <a href="#">Manager</a>
-                <a href="#">Programming</a>
+                 <?php foreach ($popular_keywords as $popular_keyword) { ?>
+                <a href="#"><?php echo $popular_keyword->Keyword  ?></a>
+                 <?php  } ?>
               </div>
             </div>
           </div>
@@ -200,7 +202,7 @@ var TxtType = function(el, toRotate, period) {
                   </div>
                   <div class="pull-right">
                     <div class="icon">
-                      <i class="ti-heart"></i>
+                      <i class="ti-zip"></i>
                     </div>
                     <a href="job-details.html" class="btn btn-common btn-rm">More Detail</a>
                   </div>
@@ -560,7 +562,7 @@ var TxtType = function(el, toRotate, period) {
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="counting">
               <div class="icon">
-                <i class="ti-heart"></i>
+                <i class="ti-home"></i>
               </div>
               <div class="desc">
                 <h2>Company</h2>

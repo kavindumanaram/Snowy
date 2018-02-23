@@ -87,3 +87,8 @@ UPDATE `job_categories` SET `Image` = 'Food Service.jpg' WHERE `job_categories`.
 
 ALTER TABLE `job` ADD `Created` TIMESTAMP NOT NULL AFTER `UserId`;
 
+-- -------------------------------------------------------------------------------
+-- Create new table for serched key woed count
+-- ------------------------------------------------------------------------------
+CREATE TABLE `popular_keyword` ( `id` INT NOT NULL AUTO_INCREMENT , `Keyword` VARCHAR(20) NOT NULL , `Count` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB
+
