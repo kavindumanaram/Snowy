@@ -92,3 +92,5 @@ ALTER TABLE `job` ADD `Created` TIMESTAMP NOT NULL AFTER `UserId`;
 -- ------------------------------------------------------------------------------
 CREATE TABLE `popular_keyword` ( `id` INT NOT NULL AUTO_INCREMENT , `Keyword` VARCHAR(20) NOT NULL , `Count` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB
 
+ALTER TABLE `popular_keyword` CHANGE `id` `Id` INT(11) NOT NULL AUTO_INCREMENT;
+

@@ -35,7 +35,7 @@ class JobController extends CI_Controller {
         $str_links = $this->pagination->create_links();
         $data["links"] = explode('&nbsp;', $str_links);
 
-        $search_text = $this->input->get('search_text');
+        $search_text = strtolower($this->input->get('search_text'));
         $search_field = $this->input->get('search_field');
         $search_from = $this->input->get('page');
         $search_location = $this->input->get('location');

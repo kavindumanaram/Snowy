@@ -65,9 +65,9 @@ class auth_model extends CI_Model {
 
     public function records_count($table, $group_by) {
       
-        $this->db->group_by($group_by);
-        $query = $this->db->count_all($table);
-        return $query;
+      //  $this->db->group_by($group_by);
+        return  $this->db->count_all($table);
+        //return $query;
     }
 
     public function get_job_categories($groupByParam, $randomEnabled) {
