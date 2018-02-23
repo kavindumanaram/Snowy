@@ -93,6 +93,8 @@ class job_model extends CI_Model {
     public function records_count($table, $group_by) {
         return $this->db->count_all($table);
     }
+    
+
 
 }
 ?>

@@ -94,3 +94,5 @@ CREATE TABLE `popular_keyword` ( `id` INT NOT NULL AUTO_INCREMENT , `Keyword` VA
 
 ALTER TABLE `popular_keyword` CHANGE `id` `Id` INT(11) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE `job` ADD `Image` VARCHAR(50) NOT NULL AFTER `UserId`;
+

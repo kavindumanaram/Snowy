@@ -114,6 +114,15 @@ class auth_model extends CI_Model {
         return $query->result();
     }
     
+        public function latest_jobs(){
+     $this->db->select('job.*,job_categories.*');
+        $this->db->from('job');
+        $this->db->join('job_categories', 'job.Category = job_categories.JobCategoryId', 'inner');
+        $this->db->limit(4);
+        $this->db->order_by("JobId", "ASC");
+        $query = $this->db->get();
+        return $query->result();
+    }
     
 
 }
