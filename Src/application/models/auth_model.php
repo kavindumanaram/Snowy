@@ -63,20 +63,11 @@ class auth_model extends CI_Model {
         return true;
     }
 
-    public function record_count() {
-        return $this->db->count_all("job");
-    }
-
-    public function job_count() {
-        return $this->db->count_all("job");
-    }
-
-    public function user_count() {
-        return $this->db->count_all("user");
-    }
-
-    public function resume_count() {
-        return $this->db->count_all("resume");
+    public function records_count($table, $group_by) {
+      
+        $this->db->group_by($group_by);
+        $query = $this->db->count_all($table);
+        return $query;
     }
 
     public function get_job_categories($groupByParam, $randomEnabled) {

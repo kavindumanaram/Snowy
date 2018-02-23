@@ -566,7 +566,7 @@ var TxtType = function(el, toRotate, period) {
               </div>
               <div class="desc">
                 <h2>Company</h2>
-                <h1 class="counter">9050</h1>                
+                <h1 class="counter"><?php print($company_count)  ?></h1>                
               </div>
             </div>
           </div>

@@ -58,6 +58,7 @@ class job_model extends CI_Model {
     }
     
 
+    
     public function get_all_jobs_group_by($group_by_paramerter) {
         $this->db->select('job.*,job_categories.*, count(JobId) as jobCount');
         $this->db->from('job');
@@ -66,10 +67,11 @@ class job_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
-
-    public function record_count() {
-        return $this->db->count_all("job");
-    }
+    
+//
+//    public function record_count() {
+//        return $this->db->count_all("job");
+//    }
 
 }
 ?>

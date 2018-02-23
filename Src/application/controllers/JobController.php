@@ -14,7 +14,7 @@ class JobController extends CI_Controller {
     public function browse_jobs() {
         $config = array();
         $config["base_url"] = base_url() . "index.php/JobController/browse_jobs";
-        $total_row = $this->job_model->record_count();
+        $total_row = $this->job_model->records_count("job", "JobId");
         $config["total_rows"] = $total_row;
         $config["per_page"] = 5;
         $config['use_page_numbers'] = TRUE;
