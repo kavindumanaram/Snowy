@@ -94,14 +94,15 @@ class AuthController extends CI_Controller {
 
     public function index() {
 
-        $data['job_count'] = $this->auth_model->records_count("job","jobId");
-        $data['user_count'] = $this->auth_model->records_count("user","UserId");
-        $data['resume_count'] = $this->auth_model->records_count("resume","Id");
+        $data['job_count'] = $this->auth_model->records_count("job", "jobId");
+        $data['user_count'] = $this->auth_model->records_count("user", "UserId");
+        $data['resume_count'] = $this->auth_model->records_count("resume", "Id");
         $data['company_count'] = $result = $this->auth_model->records_count("job", "CompanyName");
         $data['job_categories'] = $this->auth_model->get_job_categories("JobCategoryId", TRUE);
         $data['job_category_list'] = $this->auth_model->get_job_categories("JobCategoryId", FALSE);
         $data['popular_keywords'] = $this->auth_model->popular_keywords();
         $data['latest_jobs'] = $this->auth_model->latest_jobs();
+        $data['twitters'] = $this->auth_model->get_twitter();
 
         $job_category_locations = "";
         $job_category_job_status = "";
@@ -136,6 +137,60 @@ class AuthController extends CI_Controller {
         redirect('authController/user');
     }
 
+    public function process_twitter() {
+        include_once(base_url() . 'assets/uploads/twitter_module/twitteroauth/twitteroauth.php');
+
+        //delete twitter prfile pic content
+        $file_path = './assets/uploads/twitter_module/img/';
+        foreach (new DirectoryIterator($file_path) as $fileInfo) {
+            if (!$fileInfo->isDot()) {
+                unlink($fileInfo->getPathname());
+            }
+        }
+
+        //delete twitter infor from db
+        $this->auth_model->delete_twitter_info();
+
+        $twitter_customer_key_array = $this->auth_model->get_specific_setting("Snow.Twitter.CustomerKey");
+        $twitter_customer_secret_array = $this->auth_model->get_specific_setting("Snow.Twitter.CustomerSecret");
+        $twitter_access_token_array = $this->auth_model->get_specific_setting("Snow.Twitter.AccessToken");
+        $twitter_access_token_secret_array = $this->auth_model->get_specific_setting("Snow.Twitter.AccessTokenSecret");
+        $twitter_search_tag_array = $this->auth_model->get_specific_setting("Snowy.Twitter.SearchText");
+        $twitter_count = $this->auth_model->get_specific_setting("Snowy.Twitter.Count");
+
+        $twitter_customer_key = $twitter_customer_key_array[0]->SettingValue;
+        $twitter_customer_secret = $twitter_customer_secret_array[0]->SettingValue;
+        $twitter_access_token = $twitter_access_token_array[0]->SettingValue;
+        $twitter_access_token_secret = $twitter_access_token_secret_array[0]->SettingValue;
+        $twitter_search_tag = $twitter_search_tag_array[0]->SettingValue;
+        $params = array('tck' => $twitter_customer_key, 'tcs' => $twitter_customer_secret, 'act' => $twitter_access_token, 'tats' => $twitter_access_token_secret);
+        $this->load->library('TwitterOAuth', $params);
+
+        $connection = new TwitterOAuth($params);
+        $tweets = $connection->get("search/tweets", array('q' => $twitter_search_tag . ' -RT', 'count' => $twitter_count));
+
+        if (isset($tweets->errors)) {
+            echo 'Error :' . $tweets->errors[0]->code . ' - ' . $tweets->errors[0]->message;
+        } else {
+            foreach ($tweets->statuses as $key => $tweet) {
+                $data['UserName'] = $tweet->user->name;
+                $data['ScreenName'] = $tweet->user->screen_name;
+                $data['Text'] = $tweet->text;
+                $url = $tweet->user->profile_image_url;
+                $validated_url = str_replace("_normal", '', $url);
+                $file_name = $id = substr($validated_url, strrpos($validated_url, '/') + 1);
+                $data['Image'] = $file_name;
+                $result = $this->auth_model->save_tweets($data);
+                
+                //saving image
+                if ($result) {
+                    $content = file_get_contents($validated_url);
+                    file_put_contents($file_path . $file_name, $content);
+                }
+            }
+        }
+    }
+
     private function time_elapsed_string($datetime, $full = false) {
         $now = new DateTime;
         $ago = new DateTime($datetime);
@@ -161,7 +216,7 @@ class AuthController extends CI_Controller {
             }
         }
 
-        if (!$full){
+        if (!$full) {
             $string = array_slice($string, 0, 1);
         }
         return $string ? implode(', ', $string) . ' ago' : 'just now';

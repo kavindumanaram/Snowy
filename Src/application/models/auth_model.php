@@ -124,6 +124,26 @@ class auth_model extends CI_Model {
         return $query->result();
     }
     
+    public function get_twitter(){
+     $query = $this->db->get('twitter');
+        return $query->result();
+    }
+    
+    public function get_specific_setting($setting_name){
+        $condition = "SettingName = '$setting_name'";
+    $this->db->where($condition);
+     $query = $this->db->get('setting');
+        return $query->result();
+    }
+    
+        public function save_tweets($data) {
+        return $this->db->insert('twitter', $data);
+    }
+    
+    public function delete_twitter_info()
+    {
+        $this->db->empty_table("twitter");
+    }
 
 }
 

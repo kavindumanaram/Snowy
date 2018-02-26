@@ -389,27 +389,16 @@ var TxtType = function(el, toRotate, period) {
       <div class="container">
         <div class="row">
           <div class="touch-slider" class="owl-carousel owl-theme">
-            <div class="item active text-center">  
-              <img class="img-member" src="<?php echo base_url(); ?>assets/img/testimonial/img1.jpg" alt=""> 
+              <?php foreach ($twitters as $twitter) { ?>
+                              <div class="item active text-center">  
+                                  <img class="img-member" src="<?php echo base_url(); ?>assets/uploads/twitter_module/img/<?php echo $twitter->Image?>" alt="" height="90px" width="90px"> 
               <div class="client-info">
-               <h2 class="client-name">Jessica <span>(Senior Accountant)</span></h2>
+               <h2 class="client-name"><?php echo $twitter->UserName?> <span>(@<?php echo $twitter->ScreenName?>)</span></h2>
               </div>
-              <p><i class="fa fa-quote-left quote-left"></i> The team that was assigned to our project... were extremely professional <i class="fa fa-quote-right quote-right"></i><br> throughout the project and assured that the owner expectations were met and <br> often exceeded. </p>
+              <p><i class="fa fa-quote-left quote-left"></i> <?php echo $twitter->Text ?> <i class="fa fa-quote-right quote-right"></i></p>
             </div>
-            <div class="item text-center">
-              <img class="img-member" src="<?php echo base_url(); ?>assets/img/testimonial/img2.jpg" alt=""> 
-              <div class="client-info">
-               <h2 class="client-name">John Doe <span>(Project Menager)</span></h2>
-              </div>
-              <p><i class="fa fa-quote-left quote-left"></i> The team that was assigned to our project... were extremely professional <i class="fa fa-quote-right quote-right"></i><br> throughout the project and assured that the owner expectations were met and <br> often exceeded. </p>
-            </div>
-            <div class="item text-center">
-              <img class="img-member" src="<?php echo base_url(); ?>assets/img/testimonial/img3.jpg" alt=""> 
-              <div class="client-info">
-                <h2 class="client-name">Helen <span>(Engineer)</span></h2>
-              </div>
-              <p><i class="fa fa-quote-left quote-left"></i> The team that was assigned to our project... were extremely professional <i class="fa fa-quote-right quote-right"></i><br> throughout the project and assured that the owner expectations were met and <br> often exceeded. </p>
-            </div>
+          <?php    } ?>
+
           </div>
         </div>
       </div>

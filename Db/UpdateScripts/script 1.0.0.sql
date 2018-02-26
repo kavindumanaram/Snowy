@@ -96,3 +96,24 @@ ALTER TABLE `popular_keyword` CHANGE `id` `Id` INT(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `job` ADD `Image` VARCHAR(50) NOT NULL AFTER `UserId`;
 
+-- -----------------------------------------------------------------------------
+-- create new table for twitter
+-- ------------------------------------------------------------------------------
+CREATE TABLE `snowydatabase`.`twitter` ( `id` INT NOT NULL AUTO_INCREMENT , `UserName` VARCHAR(30) NOT NULL , `ScreenName` VARCHAR(50) NOT NULL , `Text` VARCHAR(600) NOT NULL , `Image` VARCHAR(200) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE twitter CONVERT TO CHARACTER SET utf8
+
+ALTER TABLE `twitter` ADD `Created` TIMESTAMP NOT NULL AFTER `Image`;
+
+CREATE TABLE setting ( `id` INT NOT NULL AUTO_INCREMENT , `SettingName` VARCHAR(50) NOT NULL , `SettingValue` VARCHAR(50) NOT NULL , `Created` TIMESTAMP NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+-- ------------------------------------------------------------------------------
+
+INSERT INTO `setting` (`id`, `SettingName`, `SettingValue`, `Created`) VALUES 
+(NULL, 'Snowy.Twitter.SearchText', 'job', CURRENT_TIMESTAMP),
+(NULL, 'Snow.Twitter.CustomerKey', 'hFT2CiKSpnE9s0Hiob0lAbF5K', CURRENT_TIMESTAMP),
+(NULL, 'Snow.Twitter.CustomerSecret', 'JD1leTZQ1WG5xwgWHtImVM9PYehzTUckaplFV2Zlqe261AvDsE', CURRENT_TIMESTAMP),
+(NULL, 'Snow.Twitter.AccessToken', '2926889876-bQEvgkP3ngVKMTrleUm3siH8q846SyOMQvloyq6', CURRENT_TIMESTAMP),
+(NULL, 'Snow.Twitter.AccessTokenSecret', 'aF7LwPq1HGP0jNmLp7QQ68iLrSZv8sPY3Gcot50P8qbKx', CURRENT_TIMESTAMP),
+(NULL, 'Snowy.Twitter.Count', '5', CURRENT_TIMESTAMP)
+
+-- -----------------------------------------------------------------------------
