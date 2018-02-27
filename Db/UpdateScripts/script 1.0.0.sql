@@ -116,4 +116,5 @@ INSERT INTO `setting` (`id`, `SettingName`, `SettingValue`, `Created`) VALUES
 (NULL, 'Snow.Twitter.AccessTokenSecret', 'aF7LwPq1HGP0jNmLp7QQ68iLrSZv8sPY3Gcot50P8qbKx', CURRENT_TIMESTAMP),
 (NULL, 'Snowy.Twitter.Count', '5', CURRENT_TIMESTAMP)
 
+-- run http://localhost:8012/snowy/Src/index.php/AuthController/process_twitter
 -- -----------------------------------------------------------------------------

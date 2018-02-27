@@ -233,9 +233,22 @@ var TxtType = function(el, toRotate, period) {
     </section>
     <!-- Find Job Section End -->
 
-    <!-- Category Section Start -->
 
-    <!-- Category Section End -->  
+    <!-- Start Purchase Section -->
+    <section class="section purchase" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row">
+          <div class="section-content text-center">
+            <h1 class="title-text">
+             Looking for an Internship
+            </h1>
+            <p>Join thousand of employers and earn what you deserve!</p>
+            <a href="my-account.html" class="btn btn-common">Get Started Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Purchase Section --> 
 
     <!-- Featured Jobs Section Start -->
     <section class="featured-jobs section">
@@ -275,32 +288,17 @@ var TxtType = function(el, toRotate, period) {
     </section>
     <!-- Featured Jobs Section End -->
 
-    <!-- Start Purchase Section -->
-    <section class="section purchase" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row">
-          <div class="section-content text-center">
-            <h1 class="title-text">
-             Looking for an Internship
-            </h1>
-            <p>Join thousand of employers and earn what you deserve!</p>
-            <a href="my-account.html" class="btn btn-common">Get Started Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Purchase Section -->
      
     <!-- Blog Section -->
-    <section id="blog" class="section">
-      <!-- Container Starts -->
+<!--    <section id="blog" class="section">
+       Container Starts 
       <div class="container">
         <h2 class="section-title">
           Latest News
         </h2>
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
+             Blog Item Starts 
             <div class="blog-item-wrapper">
               <div class="blog-item-img">
                 <a href="single-post.html">
@@ -323,11 +321,11 @@ var TxtType = function(el, toRotate, period) {
                 <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
               </div>
             </div>
-            <!-- Blog Item Wrapper Ends-->
+             Blog Item Wrapper Ends
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
+             Blog Item Starts 
             <div class="blog-item-wrapper">
               <div class="blog-item-img">
                 <a href="single-post.html">
@@ -350,11 +348,11 @@ var TxtType = function(el, toRotate, period) {
                 <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
               </div>
             </div>
-            <!-- Blog Item Wrapper Ends-->
+             Blog Item Wrapper Ends
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
+             Blog Item Starts 
             <div class="blog-item-wrapper">
               <div class="blog-item-img">
                 <a href="single-post.html">
@@ -377,11 +375,11 @@ var TxtType = function(el, toRotate, period) {
                 <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
               </div>
             </div>
-            <!-- Blog Item Wrapper Ends-->
+             Blog Item Wrapper Ends
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
     <!-- blog Section End -->
 
     <!-- Testimonial Section Start -->
