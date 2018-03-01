@@ -22,6 +22,7 @@
                                     <li><a href="<?php echo base_url(); ?>index.php/AuthController/user">Users</a></li>
                                 </ul>
                                 <ul class="lest">
+                                    <li><a href="<?php echo base_url(); ?>index.php/AdminPanelController/twitter_management">Manage Tweets</a></li>
                                     <li><a href="<?php echo base_url(); ?>index.php/AuthController/change_password">Change Password</a></li>
                                     <li><a href="<?php echo base_url(); ?>index.php/AuthController/Logout">Sing Out</a></li>
                                 </ul>

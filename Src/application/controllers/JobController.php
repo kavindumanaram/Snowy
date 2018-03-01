@@ -9,6 +9,7 @@ class JobController extends CI_Controller {
         parent::__construct();
         $this->load->model('job_model');
         $this->load->library('pagination');
+        $this->load->library('session');
     }
 
     public function browse_jobs() {
@@ -77,7 +78,8 @@ class JobController extends CI_Controller {
     }
 
     public function job_categories() {
-        $this->load->view('job_categories');
+        $data['records'] = $this->job_model->get_all_job_categories();
+        $this->load->view('job_categories', $data);
     }
 
     public function save_job_categories() {

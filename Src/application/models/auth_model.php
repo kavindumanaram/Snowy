@@ -45,11 +45,11 @@ class auth_model extends CI_Model {
     }
 
     public function get_users() {
-        $this->db->select('*,user.Email as userEmail');
-        $this->db->select('user.*,resume.*');
-        $this->db->from('user');
-        $this->db->join('resume', 'user.Email = resume.Email', 'left');
-        $this->db->group_by('UserId');
+        $this->db->select('resume.*,user.Email as userEmail');
+      //  $this->db->select('user.*,resume.*');
+        $this->db->from('user,resume');
+        $this->db->where('user.UserId = user.UserId');
+     //   $this->db->group_by('user.UserId');
         $query = $this->db->get();
         return $query->result();
     }

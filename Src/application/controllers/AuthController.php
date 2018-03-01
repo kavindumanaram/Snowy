@@ -93,7 +93,7 @@ class AuthController extends CI_Controller {
     }
 
     public function index() {
-
+        $data['job_category_count'] = $this->auth_model->records_count("job_categories", "JobCategoryId");
         $data['job_count'] = $this->auth_model->records_count("job", "jobId");
         $data['user_count'] = $this->auth_model->records_count("user", "UserId");
         $data['resume_count'] = $this->auth_model->records_count("resume", "Id");
@@ -167,7 +167,7 @@ class AuthController extends CI_Controller {
         $this->load->library('TwitterOAuth', $params);
 
         $connection = new TwitterOAuth($params);
-        $tweets = $connection->get("search/tweets", array('q' => $twitter_search_tag . ' -RT', 'count' => $twitter_count));
+        $tweets = $connection->get("search/tweets", array('q' => $twitter_search_tag . ' -RT', 'count' => $twitter_count[0]->SettingValue));
 
         if (isset($tweets->errors)) {
             echo 'Error :' . $tweets->errors[0]->code . ' - ' . $tweets->errors[0]->message;
@@ -189,6 +189,8 @@ class AuthController extends CI_Controller {
                 }
             }
         }
+        
+        redirect('AdminPanelController/twitter_management');
     }
 
     private function time_elapsed_string($datetime, $full = false) {

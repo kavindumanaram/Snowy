@@ -71,83 +71,22 @@
 <!-- Side Menu End --> 
                     <div class="col-md-8 col-sm-8 col-xs-12">
                         <div class="job-alerts-item">
-                            <h3 class="alerts-title">Add New Job Categories</h3>
-                            <form class="form" action="<?php echo base_url();?>index.php/jobController/save_job_categories" method="POST">
+                            <h3 class="alerts-title">Tweeter Management</h3> <a href="<?php echo base_url(); ?>index.php/AuthController/process_twitter" id="submit" class="btn btn-common">Boost Tweeter</a>
+                            <hr/>
+                            <form class="form" action="<?php echo base_url();  ?>/index.php/AdminPanelController/update_twitter" method="POST">
                                 <div class="form-group is-empty">
-                                    <label class="control-label" for="textarea" >Category Name</label>
-                                    <input class="form-control" type="text" required="required" name="name" id="name">
+                                    <label class="control-label" for="textarea">Tweeter Keyword</label>
+                                    <input class="form-control" type="text" value="<?php echo $twitter_search_tag; ?>" readonly="readonly">
                                     <span class="material-input"></span>
                                     <span class="material-input"></span></div>
                                 <div class="form-group is-empty">
-                                    <label class="control-label" for="textarea">Description</label>
-                                    <input class="form-control" type="text" name="description" id="description">
+                                    <label class="control-label" for="textarea">Tweeter Count</label>
+                                    <input class="form-control" type="text" value="<?php echo $twitter_count; ?>" readonly="readonly">
                                     <span class="material-input"></span>
-                                    <span class="material-input"></span></div>
-                                <input type="submit" value="save" class="btn btn-common">
+                                    <span class="material-input"></span></div>                                
                             </form>
                         </div>
-                        </div>
-                        <br/>
-                        <div class="col-md-8 col-sm-8 col-xs-12">
-                        <div class="job-alerts-item candidates">
-                            <h3 class="alerts-title">Manage Jobs</h3>
-                            <div class="alerts-list">
-                                <div class="row">
-                                    <div class="col-md-3"> 
-                                        <p>JobCategory Name</p>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <p>Description</p>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <p>Image</p>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <p>Action</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                                <?php foreach ($records as $record) {?>
-                            <div class="alerts-content">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <h3><?php echo $record->JobCategoryName; ?></h3>
-<!--                                        <span class="location"><i class="ti-location-pin"></i><?php echo  $record->JobCategoryId; ?></span>-->
-                                    </div>
-                                    <div class="col-md-3">
-                                        <p><?php echo  $record->Description; ?></p>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="can-img">
-                                            <a href="#"><img src="<?php echo base_url();?>/assets/uploads/job_categories_imge/<?php echo $record->Image; ?>" alt=""></a></div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <p><a href="<?php echo base_url();?>index.php/AuthController/delete_user?email=<?php echo $record->JobCategoryName;?>"><span class="part-time">Edit</span></a></p>
-                                        <p><a href="<?php echo base_url();?>index.php/AuthController/delete_user?email=<?php echo $record->JobCategoryName;?>"><span class="full-time">Delete</span></a></p>
-                                    </div>
-                                </div>
-                                </div>
-                                <?php } ?>
-                            
-                            
-                           
-                           
-
-                            <br>
-                            <ul class="pagination">
-                                <li class="active"><a href="#" class="btn btn-common"><i class="ti-angle-left"></i> prev</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li class="active"><a href="#" class="btn btn-common">Next <i class="ti-angle-right"></i></a></li>
-                            </ul>
-
-                        </div>
                     </div>
-                    
                 </div>
             </div>
         </section>

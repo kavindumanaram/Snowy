@@ -254,7 +254,7 @@ var TxtType = function(el, toRotate, period) {
     <section class="featured-jobs section">
       <div class="container">
         <h2 class="section-title">
-          Job Categories
+          Top Job Categories
         </h2>
         <div class="row">
      
@@ -284,6 +284,14 @@ var TxtType = function(el, toRotate, period) {
             </div>
           </div>
          <?php } ?>
+                      <div class="col-md-12">
+            <div class="showing pull-left">
+              <a href="#">Showing <span>3</span> Of <?php echo $job_category_count ?> Jobs Categories</a>
+            </div>                    
+            <ul class="pagination pull-right">              
+              <li class="active"><a href="#" class="btn btn-common">Click For More <i class="ti-angle-right"></i></a></li>
+            </ul>
+          </div>
       </div>
     </section>
     <!-- Featured Jobs Section End -->
