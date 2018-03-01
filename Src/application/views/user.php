@@ -100,7 +100,9 @@
                                         <p><?php echo  $record->userEmail; ?></p>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="can-img"><a href="#"><img src="<?php echo base_url();?>index.php/assets/img/jobs/candidates.png" alt=""></a></div>
+                                        <div class="can-img"><a href="#">
+                                                <img src="<?php echo base_url();?>/assets/uploads/profile_pic/<?php echo $record->Email; ?>.png" alt="">
+                                            </a></div>
                                     </div>
                                     <div class="col-md-3">
                                         <p><a href="<?php echo base_url();?>index.php/AuthController/delete_user?email=<?php echo $record->Email;?>"><span class="full-time">Delete</span></a></p>
