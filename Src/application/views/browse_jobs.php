@@ -86,9 +86,6 @@
                                             </div>
                                         </div>
                                         <div class="pull-right">
-                                            <div class="icon">
-                                                <i class="ti-heart"></i>
-                                            </div>
                                             <div class="btn btn-common btn-rm">More</div>
                                             <div class="btn btn-common btn-rm">Delete</div>
                                             <div class="btn btn-common btn-rm">Edit</div>

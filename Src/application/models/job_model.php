@@ -58,7 +58,8 @@ class job_model extends CI_Model {
         $this->db->order_by("JobId", "ASC");
         $query = $this->db->get();
 
-        $has_updated = FALSE;
+        if($search_text){
+                    $has_updated = FALSE;
         $popular_keywords = $this->get_all_keywords();
         foreach ($popular_keywords as $keyword) {
             if ($keyword->Keyword == strtolower($search_text)) {
@@ -75,6 +76,8 @@ class job_model extends CI_Model {
                 $data['Keyword'] = $search_text;
                 $this->db->insert('popular_keyword', $data);
             }
+        }
+
 
         
 
